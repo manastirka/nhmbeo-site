@@ -6,30 +6,22 @@
     <title>Уређивач сајта — Природњачки музеј</title>
     <meta name="robots" content="noindex,nofollow" />
 
-    <!-- Netlify Identity widget — handles editor login. -->
+    <!-- The Identity widget reads this meta tag SYNCHRONOUSLY at script
+         init. Without it the widget calls /.netlify/identity on the
+         current origin and 404s. Must come before the widget script. -->
+    <meta name="netlify-identity-api-url" content="https://nhmbeo-site.netlify.app/.netlify/identity" />
+  </head>
+  <body>
+    <!-- Identity widget loaded inside <body> so the widget's mountElement
+         calls (which target document.body) don't hit appendChild on null. -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
     <script>
-      // We host the site on nhmbeo.aleksandarlukovic.com but the Identity
-      // service lives on nhmbeo-site.netlify.app. The widget cannot infer
-      // the endpoint from window.location, so initialise it explicitly
-      // BEFORE Decap CMS loads (Decap reads window.netlifyIdentity).
-      if (window.netlifyIdentity) {
+      // Belt and braces: also set APIUrl programmatically.
+      if (window.netlifyIdentity && typeof window.netlifyIdentity.init === 'function') {
         window.netlifyIdentity.init({
           APIUrl: 'https://nhmbeo-site.netlify.app/.netlify/identity',
         });
-      }
-    </script>
-  </head>
-  <body>
-    <!-- Decap CMS bundle (open-source successor to Netlify CMS) -->
-    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-
-    <script>
-      // After invite-link signup, Netlify redirects back to the marketing
-      // domain. Re-route the user back here so they enter the CMS, not the
-      // homepage.
-      if (window.netlifyIdentity) {
+        // After invite signup, send the user into the editor instead of the homepage.
         window.netlifyIdentity.on('init', (user) => {
           if (!user) {
             window.netlifyIdentity.on('login', () => {
@@ -39,5 +31,8 @@
         });
       }
     </script>
+
+    <!-- Decap CMS bundle — runs after the widget is up. -->
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   </body>
 </html>
