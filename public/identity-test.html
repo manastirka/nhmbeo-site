@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Identity test</title>
+    <meta name="robots" content="noindex,nofollow" />
+    <style>
+      body { font-family: system-ui; max-width: 600px; margin: 4em auto; padding: 1em; }
+      pre { background: #eee; padding: 1em; overflow: auto; font-size: 12px; }
+      button { padding: .8em 1.6em; font-size: 16px; cursor: pointer; }
+    </style>
+  </head>
+  <body>
+    <h1>Identity test page</h1>
+    <p>Use this page to accept invite tokens or log in. Append the invite token in the URL hash.</p>
+    <p>
+      <button onclick="window.netlifyIdentity.open()">Open Identity widget</button>
+    </p>
+    <h2>Diagnostics</h2>
+    <pre id="diag">Loading…</pre>
+
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script>
+      var diag = document.getElementById('diag');
+      function log(line) { diag.textContent += '\n' + line; }
+      diag.textContent = 'page loaded at ' + new Date().toISOString();
+      log('hash: ' + window.location.hash);
+      log('netlifyIdentity present: ' + !!window.netlifyIdentity);
+
+      if (window.netlifyIdentity && typeof window.netlifyIdentity.init === 'function') {
+        window.netlifyIdentity.init({
+          APIUrl: 'https://nhmbeo-site.netlify.app/.netlify/identity',
+        });
+        log('init() called with APIUrl=https://nhmbeo-site.netlify.app/.netlify/identity');
+
+        window.netlifyIdentity.on('init', function (user) {
+          log('event init — user=' + (user ? user.email : 'null'));
+        });
+        window.netlifyIdentity.on('login', function (user) {
+          log('event login — user=' + user.email);
+          alert('Logged in as ' + user.email);
+        });
+        window.netlifyIdentity.on('error', function (err) {
+          log('event error — ' + (err && err.message));
+        });
+
+        // If the URL has an invite_token, force-open the widget so the user
+        // sees the "Complete signup" form even if auto-detection fails.
+        if (/^#invite_token=/.test(window.location.hash || '')) {
+          setTimeout(function () {
+            log('found invite_token in hash, opening widget…');
+            window.netlifyIdentity.open();
+          }, 600);
+        }
+      } else {
+        log('ERROR: window.netlifyIdentity not present');
+      }
+    </script>
+  </body>
+</html>
