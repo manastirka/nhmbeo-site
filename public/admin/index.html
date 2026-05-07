@@ -7,9 +7,29 @@
     <meta name="robots" content="noindex,nofollow" />
   </head>
   <body>
-    <!-- Decap CMS bundles its own auth UI; reads identity_url + gateway_url
-         from /admin/config.yml. The standalone netlify-identity-widget
-         script isn't required here and was crashing on appendChild. -->
+    <!-- 1. Identity widget — required to process URL-fragment tokens like
+         #invite_token=…, #recovery_token=…, #confirmation_token=…
+         Loaded inside <body> so it can attach UI nodes. -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script>
+      (function () {
+        if (!window.netlifyIdentity || typeof window.netlifyIdentity.init !== 'function') return;
+        window.netlifyIdentity.init({
+          APIUrl: 'https://nhmbeo-site.netlify.app/.netlify/identity',
+        });
+        // After accepting an invite, redirect into the editor.
+        window.netlifyIdentity.on('init', function (user) {
+          if (!user) {
+            window.netlifyIdentity.on('login', function () {
+              document.location.href = '/admin/';
+            });
+          }
+        });
+      })();
+    </script>
+
+    <!-- 2. Decap CMS — picks up window.netlifyIdentity for auth + reads
+         identity_url / gateway_url from /admin/config.yml for git-gateway. -->
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   </body>
 </html>
