@@ -86,8 +86,21 @@ jobs:
           <!doctype html>
           <meta charset="utf-8">
           <title>Природњачки музеј у Београду</title>
-          <meta http-equiv="refresh" content="0; url=/sr-Cyrl/">
           <link rel="canonical" href="/sr-Cyrl/">
+          <script>
+            // Identity invite/recovery emails arrive with a hash fragment
+            // (#invite_token=…). Forward those into the admin app on the
+            // canonical domain so the widget can pick the token up.
+            (function () {
+              var h = window.location.hash || '';
+              if (/^#(invite_token|recovery_token|confirmation_token|email_change_token)=/.test(h)) {
+                window.location.replace('https://nhmbeo.aleksandarlukovic.com/admin/' + h);
+              } else {
+                window.location.replace('/sr-Cyrl/');
+              }
+            })();
+          </script>
+          <meta http-equiv="refresh" content="0; url=/sr-Cyrl/">
           <p>Преусмеравање на <a href="/sr-Cyrl/">/sr-Cyrl/</a>…</p>
           IDX
 
