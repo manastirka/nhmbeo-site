@@ -1,22 +1,21 @@
-# Minimal Netlify build — we don't actually use Netlify to deploy the site
-# (GitHub Actions → FTP → Hostinger handles that). All this does is publish
-# a small placeholder so Netlify counts as having a successful deploy, which
-# in turn makes the Identity service (/.netlify/identity) reachable.
+# Netlify exists only to host the Identity service. The actual production
+# deploy is the GitHub Action that FTPs to Hostinger. But Netlify won't make
+# Identity reachable without a successful deploy of the connected repo, so
+# we run the same static export here. Netlify becomes a free read-only
+# backup of the site at https://nhmbeo-site.netlify.app — useful if Hostinger
+# is ever down.
 
 [build]
   command = """
-    mkdir -p _netlify_placeholder
-    cat > _netlify_placeholder/index.html <<'HTML'
-    <!doctype html>
-    <meta charset="utf-8">
-    <meta name="robots" content="noindex,nofollow">
-    <title>Природњачки музеј — placeholder</title>
-    <meta http-equiv="refresh" content="0; url=https://nhmbeo.aleksandarlukovic.com/admin/">
-    <p>Redirecting to <a href="https://nhmbeo.aleksandarlukovic.com/admin/">admin</a>…</p>
-    HTML
+    if [ -d src/app/api ]; then mv src/app/api /tmp/api-bak; fi;
+    NEXT_OUTPUT=export npm run build;
+    if [ -d /tmp/api-bak ]; then mv /tmp/api-bak src/app/api; fi
   """
-  publish = "_netlify_placeholder"
+  publish = "out"
 
-# Don't run on every push to main — Netlify is only here for Identity.
+[build.environment]
+  NODE_VERSION = "22"
+  NEXT_OUTPUT = "export"
+
 [build.processing]
   skip_processing = true
