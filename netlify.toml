@@ -1,0 +1,22 @@
+# Minimal Netlify build — we don't actually use Netlify to deploy the site
+# (GitHub Actions → FTP → Hostinger handles that). All this does is publish
+# a small placeholder so Netlify counts as having a successful deploy, which
+# in turn makes the Identity service (/.netlify/identity) reachable.
+
+[build]
+  command = """
+    mkdir -p _netlify_placeholder
+    cat > _netlify_placeholder/index.html <<'HTML'
+    <!doctype html>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Природњачки музеј — placeholder</title>
+    <meta http-equiv="refresh" content="0; url=https://nhmbeo.aleksandarlukovic.com/admin/">
+    <p>Redirecting to <a href="https://nhmbeo.aleksandarlukovic.com/admin/">admin</a>…</p>
+    HTML
+  """
+  publish = "_netlify_placeholder"
+
+# Don't run on every push to main — Netlify is only here for Identity.
+[build.processing]
+  skip_processing = true
