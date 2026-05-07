@@ -6,13 +6,20 @@
     <title>Уређивач сајта — Природњачки музеј</title>
     <meta name="robots" content="noindex,nofollow" />
 
-    <!-- Cross-origin Identity: Identity service runs on nhmbeo-site.netlify.app
-         while the site is hosted on nhmbeo.aleksandarlukovic.com. The widget
-         needs an explicit API URL because it can't infer it from window.location. -->
-    <meta name="netlify-identity-api-url" content="https://nhmbeo-site.netlify.app/.netlify/identity" />
-
     <!-- Netlify Identity widget — handles editor login. -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+    <script>
+      // We host the site on nhmbeo.aleksandarlukovic.com but the Identity
+      // service lives on nhmbeo-site.netlify.app. The widget cannot infer
+      // the endpoint from window.location, so initialise it explicitly
+      // BEFORE Decap CMS loads (Decap reads window.netlifyIdentity).
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.init({
+          APIUrl: 'https://nhmbeo-site.netlify.app/.netlify/identity',
+        });
+      }
+    </script>
   </head>
   <body>
     <!-- Decap CMS bundle (open-source successor to Netlify CMS) -->
