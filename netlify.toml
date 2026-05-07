@@ -1,21 +1,15 @@
-# Netlify exists only to host the Identity service. The actual production
-# deploy is the GitHub Action that FTPs to Hostinger. But Netlify won't make
-# Identity reachable without a successful deploy of the connected repo, so
-# we run the same static export here. Netlify becomes a free read-only
-# backup of the site at https://nhmbeo-site.netlify.app — useful if Hostinger
-# is ever down.
+# Netlify only hosts a tiny stub so the Identity service has a deploy
+# attached and is reachable at /.netlify/identity. The real production
+# build is the GitHub Action that FTPs to Hostinger.
+#
+# Putting `base` on a subdirectory with its own minimal package.json
+# stops Netlify from auto-installing @netlify/plugin-nextjs (which would
+# fight with our static export).
 
 [build]
-  command = """
-    if [ -d src/app/api ]; then mv src/app/api /tmp/api-bak; fi;
-    NEXT_OUTPUT=export npm run build;
-    if [ -d /tmp/api-bak ]; then mv /tmp/api-bak src/app/api; fi
-  """
-  publish = "out"
-
-[build.environment]
-  NODE_VERSION = "22"
-  NEXT_OUTPUT = "export"
+  base = "netlify-stub/"
+  command = "true"
+  publish = "."
 
 [build.processing]
   skip_processing = true
