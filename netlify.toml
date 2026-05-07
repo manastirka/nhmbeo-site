@@ -2,14 +2,18 @@
 # attached and is reachable at /.netlify/identity. The real production
 # build is the GitHub Action that FTPs to Hostinger.
 #
-# Putting `base` on a subdirectory with its own minimal package.json
-# stops Netlify from auto-installing @netlify/plugin-nextjs (which would
-# fight with our static export).
+# `base` is the netlify-stub subdirectory (no Next.js detected there).
+# `publish` MUST be a different directory than `base`, otherwise the
+# auto-installed @netlify/plugin-nextjs refuses with the message
+# "Your publish directory cannot be the same as the base directory".
 
 [build]
   base = "netlify-stub/"
-  command = "true"
-  publish = "."
+  command = "mkdir -p _site && cp -r index.html admin uploads _site/ 2>/dev/null || true"
+  publish = "_site"
+
+[build.environment]
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
 
 [build.processing]
   skip_processing = true
