@@ -5,34 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Уређивач сајта — Природњачки музеј</title>
     <meta name="robots" content="noindex,nofollow" />
-
-    <!-- The Identity widget reads this meta tag SYNCHRONOUSLY at script
-         init. Without it the widget calls /.netlify/identity on the
-         current origin and 404s. Must come before the widget script. -->
-    <meta name="netlify-identity-api-url" content="https://nhmbeo-site.netlify.app/.netlify/identity" />
   </head>
   <body>
-    <!-- Identity widget loaded inside <body> so the widget's mountElement
-         calls (which target document.body) don't hit appendChild on null. -->
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <script>
-      // Belt and braces: also set APIUrl programmatically.
-      if (window.netlifyIdentity && typeof window.netlifyIdentity.init === 'function') {
-        window.netlifyIdentity.init({
-          APIUrl: 'https://nhmbeo-site.netlify.app/.netlify/identity',
-        });
-        // After invite signup, send the user into the editor instead of the homepage.
-        window.netlifyIdentity.on('init', (user) => {
-          if (!user) {
-            window.netlifyIdentity.on('login', () => {
-              document.location.href = '/admin/';
-            });
-          }
-        });
-      }
-    </script>
-
-    <!-- Decap CMS bundle — runs after the widget is up. -->
+    <!-- Decap CMS bundles its own auth UI; reads identity_url + gateway_url
+         from /admin/config.yml. The standalone netlify-identity-widget
+         script isn't required here and was crashing on appendChild. -->
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   </body>
 </html>
