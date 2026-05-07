@@ -1,0 +1,6 @@
+{
+  "name": "nhmbeo-netlify-stub",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Tiny static site Netlify deploys so /.netlify/identity is reachable. Real site lives on Hostinger."
+}

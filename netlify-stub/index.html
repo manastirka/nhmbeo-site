@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Природњачки музеј — Identity host</title>
+    <meta name="robots" content="noindex,nofollow" />
+  </head>
+  <body>
+    <script>
+      // This subdomain (nhmbeo-site.netlify.app) only exists to host
+      // Netlify Identity. Any visitor — including someone clicking a
+      // Netlify Identity invite link — is forwarded to the canonical
+      // domain. URL fragment (#invite_token=…, #recovery_token=…) is
+      // preserved so the Identity widget at /admin/ can pick it up.
+      (function () {
+        var hash = window.location.hash || '';
+        var dest =
+          /^#(invite_token|recovery_token|confirmation_token|email_change_token)=/.test(hash)
+            ? 'https://nhmbeo.aleksandarlukovic.com/admin/' + hash
+            : 'https://nhmbeo.aleksandarlukovic.com/';
+        window.location.replace(dest);
+      })();
+    </script>
+    <p>
+      Open <a href="https://nhmbeo.aleksandarlukovic.com/">the museum site</a>.
+    </p>
+  </body>
+</html>
