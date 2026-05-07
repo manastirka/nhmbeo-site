@@ -9,14 +9,13 @@
 backend:
   name: git-gateway
   branch: main
-  # Cross-origin Identity: the site lives on nhmbeo.aleksandarlukovic.com,
-  # the Identity service lives on nhmbeo-site.netlify.app. Tell Decap where.
-  identity_url: https://nhmbeo-site.netlify.app/.netlify/identity
-  gateway_url: https://nhmbeo-site.netlify.app/.netlify/git
+  # Same origin (nhmbeo-site.netlify.app) hosts both this CMS and the
+  # Identity / Git Gateway endpoints, so we don't need identity_url
+  # or gateway_url overrides.
 
 publish_mode: editorial_workflow
 
-media_folder: "public/uploads"
+media_folder: "netlify-stub/uploads"
 public_folder: "/uploads"
 
 # Top-level locale switcher in the CMS sidebar.
