@@ -2,34 +2,20 @@
 <html lang="sr-Cyrl">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Уређивач сајта — Природњачки музеј</title>
+    <title>Уређивач сајта</title>
     <meta name="robots" content="noindex,nofollow" />
+    <meta http-equiv="refresh" content="0; url=https://nhmbeo-site.netlify.app/admin/" />
+    <script>
+      // Preserve any Identity URL fragment (e.g. #invite_token=…) when
+      // forwarding visitors to the editor on the Netlify-hosted admin.
+      var hash = window.location.hash || '';
+      window.location.replace('https://nhmbeo-site.netlify.app/admin/' + hash);
+    </script>
   </head>
   <body>
-    <!-- 1. Identity widget — required to process URL-fragment tokens like
-         #invite_token=…, #recovery_token=…, #confirmation_token=…
-         Loaded inside <body> so it can attach UI nodes. -->
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <script>
-      (function () {
-        if (!window.netlifyIdentity || typeof window.netlifyIdentity.init !== 'function') return;
-        window.netlifyIdentity.init({
-          APIUrl: 'https://nhmbeo-site.netlify.app/.netlify/identity',
-        });
-        // After accepting an invite, redirect into the editor.
-        window.netlifyIdentity.on('init', function (user) {
-          if (!user) {
-            window.netlifyIdentity.on('login', function () {
-              document.location.href = '/admin/';
-            });
-          }
-        });
-      })();
-    </script>
-
-    <!-- 2. Decap CMS — picks up window.netlifyIdentity for auth + reads
-         identity_url / gateway_url from /admin/config.yml for git-gateway. -->
-    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <p>
+      Уређивач сајта налази се на
+      <a href="https://nhmbeo-site.netlify.app/admin/">nhmbeo-site.netlify.app/admin/</a>.
+    </p>
   </body>
 </html>
