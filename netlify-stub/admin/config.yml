@@ -248,3 +248,657 @@ collections:
               { name: gallery_email,   label: "Gallery — email", widget: string },
               { name: contactLink,     label: "Contact link label", widget: string }
             ] }
+
+  # ---------------------------------------------------------------
+  #  CURRENT EXHIBITION (Изложба у Галерији)
+  # ---------------------------------------------------------------
+  - name: izlozba
+    label: "Тренутна изложба"
+    files:
+      - name: izlozba_sr
+        label: "Тренутна изложба (ћирилица)"
+        file: "content/sr-Cyrl/pages/izlozba-u-galeriji.json"
+        format: json
+        fields:
+          - { name: title, label: "Наслов изложбе", widget: string }
+          - { name: intro, label: "Увод (једна реченица)", widget: text }
+          - name: featured
+            label: "Истакнуто на врху"
+            widget: object
+            fields:
+              - { name: eyebrow,   label: "Надтекст",  widget: string }
+              - { name: title,     label: "Наслов",    widget: string }
+              - { name: authors,   label: "Аутори",    widget: string }
+              - { name: dates,     label: "Трајање",   widget: string }
+              - { name: venue,     label: "Место",     widget: string }
+              - { name: ctaHref,   label: "Дугме — линк", widget: string }
+              - { name: ctaLabel,  label: "Дугме — текст", widget: string }
+          - name: stats
+            label: "Бројкама"
+            widget: list
+            summary: "{{fields.value}} — {{fields.label}}"
+            fields:
+              - { name: value, label: "Број/Текст", widget: string }
+              - { name: label, label: "Опис",       widget: string }
+          - { name: body, label: "Опис изложбе", widget: markdown }
+          - name: credits
+            label: "Аутори и захвалнице"
+            widget: object
+            fields:
+              - { name: authors_label,    label: "Лабела за ауторе", widget: string }
+              - { name: authors,          label: "Аутори",           widget: string }
+              - { name: photography_label, label: "Лабела за фотографије", widget: string }
+              - { name: photography,      label: "Фотографије",      widget: string }
+              - { name: patron_label,     label: "Лабела за покровитеља", widget: string }
+              - { name: patron,           label: "Покровитељ",       widget: string }
+          - name: images
+            label: "Галерија слика (URL-ови)"
+            widget: list
+            field: { name: url, label: "URL", widget: string }
+
+      - name: izlozba_en
+        label: "Current exhibition (English)"
+        file: "content/en/pages/izlozba-u-galeriji.json"
+        format: json
+        fields:
+          - { name: _machineTranslated, label: "Auto-translated", widget: hidden, default: true }
+          - { name: title, label: "Exhibition title", widget: string }
+          - { name: intro, label: "Intro (one sentence)", widget: text }
+          - name: featured
+            label: "Spotlight"
+            widget: object
+            fields:
+              - { name: eyebrow,   label: "Eyebrow",     widget: string }
+              - { name: title,     label: "Title",       widget: string }
+              - { name: authors,   label: "Authors",     widget: string }
+              - { name: dates,     label: "On view",     widget: string }
+              - { name: venue,     label: "Venue",       widget: string }
+              - { name: ctaHref,   label: "CTA link",    widget: string }
+              - { name: ctaLabel,  label: "CTA label",   widget: string }
+          - name: stats
+            label: "At a glance"
+            widget: list
+            summary: "{{fields.value}} — {{fields.label}}"
+            fields:
+              - { name: value, label: "Value", widget: string }
+              - { name: label, label: "Label", widget: string }
+          - { name: body, label: "Description", widget: markdown }
+          - name: credits
+            label: "Credits"
+            widget: object
+            fields:
+              - { name: authors_label,    label: "Authors label",    widget: string }
+              - { name: authors,          label: "Authors",          widget: string }
+              - { name: photography_label, label: "Photography label", widget: string }
+              - { name: photography,      label: "Photography",      widget: string }
+              - { name: patron_label,     label: "Patron label",     widget: string }
+              - { name: patron,           label: "Patron",           widget: string }
+          - name: images
+            label: "Gallery (image URLs)"
+            widget: list
+            field: { name: url, label: "URL", widget: string }
+
+  # ---------------------------------------------------------------
+  #  GALLERY (Галерија Природњачког музеја)
+  # ---------------------------------------------------------------
+  - name: galerija
+    label: "Галерија (страница)"
+    files:
+      - name: galerija_sr
+        label: "Галерија (ћирилица)"
+        file: "content/sr-Cyrl/pages/galerija.json"
+        format: json
+        fields:
+          - { name: title, label: "Наслов", widget: string }
+          - { name: intro, label: "Увод",   widget: text }
+          - name: featured
+            label: "Истакнути блок"
+            widget: object
+            fields:
+              - { name: eyebrow,  label: "Надтекст",  widget: string }
+              - { name: title,    label: "Наслов",    widget: string }
+              - { name: address,  label: "Адреса",    widget: string }
+              - { name: phone,    label: "Телефон",   widget: string }
+              - { name: email,    label: "Е-пошта",   widget: string }
+              - { name: ctaHref,  label: "Дугме — линк", widget: string }
+              - { name: ctaLabel, label: "Дугме — текст", widget: string }
+          - name: stats
+            label: "Радно време / тарифе"
+            widget: list
+            summary: "{{fields.value}} — {{fields.label}}"
+            fields:
+              - { name: value, label: "Вредност", widget: string }
+              - { name: label, label: "Опис",     widget: string }
+          - { name: body, label: "Текст о Галерији", widget: markdown }
+          - name: facts
+            label: "Зграда укратко"
+            widget: list
+            summary: "{{fields.label}}: {{fields.value}}"
+            fields:
+              - { name: label, label: "Лабела",   widget: string }
+              - { name: value, label: "Вредност", widget: string }
+          - name: groupBookings
+            label: "Групне посете"
+            widget: object
+            fields:
+              - { name: label,       label: "Наслов",   widget: string }
+              - { name: description, label: "Опис",     widget: text }
+              - { name: phone,       label: "Телефон",  widget: string }
+              - { name: email,       label: "Е-пошта",  widget: string }
+          - name: images
+            label: "Галерија слика"
+            widget: list
+            field: { name: url, label: "URL", widget: string }
+
+      - name: galerija_en
+        label: "Gallery page (English)"
+        file: "content/en/pages/galerija.json"
+        format: json
+        fields:
+          - { name: _machineTranslated, label: "Auto-translated", widget: hidden, default: true }
+          - { name: title, label: "Title", widget: string }
+          - { name: intro, label: "Intro", widget: text }
+          - name: featured
+            label: "Spotlight block"
+            widget: object
+            fields:
+              - { name: eyebrow,  label: "Eyebrow",   widget: string }
+              - { name: title,    label: "Title",     widget: string }
+              - { name: address,  label: "Address",   widget: string }
+              - { name: phone,    label: "Phone",     widget: string }
+              - { name: email,    label: "Email",     widget: string }
+              - { name: ctaHref,  label: "CTA link",  widget: string }
+              - { name: ctaLabel, label: "CTA label", widget: string }
+          - name: stats
+            label: "Hours / pricing"
+            widget: list
+            summary: "{{fields.value}} — {{fields.label}}"
+            fields:
+              - { name: value, label: "Value", widget: string }
+              - { name: label, label: "Label", widget: string }
+          - { name: body, label: "About the Gallery", widget: markdown }
+          - name: facts
+            label: "Building, in brief"
+            widget: list
+            summary: "{{fields.label}}: {{fields.value}}"
+            fields:
+              - { name: label, label: "Label", widget: string }
+              - { name: value, label: "Value", widget: string }
+          - name: groupBookings
+            label: "Group visits"
+            widget: object
+            fields:
+              - { name: label,       label: "Heading",     widget: string }
+              - { name: description, label: "Description", widget: text }
+              - { name: phone,       label: "Phone",       widget: string }
+              - { name: email,       label: "Email",       widget: string }
+          - name: images
+            label: "Gallery images"
+            widget: list
+            field: { name: url, label: "URL", widget: string }
+
+  # ---------------------------------------------------------------
+  #  TICKETS (Цене улазница)
+  # ---------------------------------------------------------------
+  - name: ulaznice
+    label: "Цене улазница"
+    files:
+      - name: ulaznice_sr
+        label: "Улазнице (ћирилица)"
+        file: "content/sr-Cyrl/pages/ulaznice.json"
+        format: json
+        fields:
+          - { name: title, label: "Наслов", widget: string }
+          - { name: intro, label: "Увод",   widget: text }
+          - { name: body,  label: "Текст",  widget: markdown }
+          - name: tickets
+            label: "Тарифе"
+            widget: list
+            summary: "{{fields.label}} — {{fields.price}}"
+            fields:
+              - { name: label, label: "Категорија", widget: string }
+              - { name: price, label: "Цена",       widget: string }
+
+      - name: ulaznice_en
+        label: "Tickets (English)"
+        file: "content/en/pages/ulaznice.json"
+        format: json
+        fields:
+          - { name: _machineTranslated, label: "Auto-translated", widget: hidden, default: true }
+          - { name: title, label: "Title", widget: string }
+          - { name: intro, label: "Intro", widget: text }
+          - { name: body,  label: "Body",  widget: markdown }
+          - name: tickets
+            label: "Ticket types"
+            widget: list
+            summary: "{{fields.label}} — {{fields.price}}"
+            fields:
+              - { name: label, label: "Category", widget: string }
+              - { name: price, label: "Price",    widget: string }
+
+  # ---------------------------------------------------------------
+  #  VISIT US LANDING (Посетите нас)
+  # ---------------------------------------------------------------
+  - name: visit_landing
+    label: "Посетите нас (страница)"
+    files:
+      - name: visit_landing_sr
+        label: "Посетите нас (ћирилица)"
+        file: "content/sr-Cyrl/pages/posetite-nas.json"
+        format: json
+        fields:
+          - { name: title, label: "Наслов", widget: string }
+          - { name: intro, label: "Увод",   widget: text }
+          - name: featured
+            label: "Истакнути блок"
+            widget: object
+            fields:
+              - { name: eyebrow,  label: "Надтекст",  widget: string }
+              - { name: title,    label: "Наслов",    widget: string }
+              - { name: address,  label: "Адреса",    widget: string }
+              - { name: phone,    label: "Телефон",   widget: string }
+              - { name: email,    label: "Е-пошта",   widget: string }
+              - { name: ctaHref,  label: "Дугме — линк", widget: string }
+              - { name: ctaLabel, label: "Дугме — текст", widget: string }
+          - name: stats
+            label: "Радно време"
+            widget: list
+            summary: "{{fields.value}} — {{fields.label}}"
+            fields:
+              - { name: value, label: "Вредност", widget: string }
+              - { name: label, label: "Опис",     widget: string }
+          - name: destinations
+            label: "Дестинације (4 плочице)"
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { name: key,         label: "Кључ (без размака)", widget: string }
+              - { name: title,       label: "Наслов",            widget: string }
+              - { name: description, label: "Опис",              widget: text }
+              - { name: href,        label: "Линк (путања)",     widget: string }
+              - { name: image,       label: "Слика (URL)",       widget: string }
+
+      - name: visit_landing_en
+        label: "Visit Us page (English)"
+        file: "content/en/pages/posetite-nas.json"
+        format: json
+        fields:
+          - { name: _machineTranslated, label: "Auto-translated", widget: hidden, default: true }
+          - { name: title, label: "Title", widget: string }
+          - { name: intro, label: "Intro", widget: text }
+          - name: featured
+            label: "Spotlight block"
+            widget: object
+            fields:
+              - { name: eyebrow,  label: "Eyebrow",  widget: string }
+              - { name: title,    label: "Title",    widget: string }
+              - { name: address,  label: "Address",  widget: string }
+              - { name: phone,    label: "Phone",    widget: string }
+              - { name: email,    label: "Email",    widget: string }
+              - { name: ctaHref,  label: "CTA link", widget: string }
+              - { name: ctaLabel, label: "CTA label", widget: string }
+          - name: stats
+            label: "Hours"
+            widget: list
+            summary: "{{fields.value}} — {{fields.label}}"
+            fields:
+              - { name: value, label: "Value", widget: string }
+              - { name: label, label: "Label", widget: string }
+          - name: destinations
+            label: "Destinations (4 cards)"
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { name: key,         label: "Key",         widget: string }
+              - { name: title,       label: "Title",       widget: string }
+              - { name: description, label: "Description", widget: text }
+              - { name: href,        label: "Link path",   widget: string }
+              - { name: image,       label: "Image URL",   widget: string }
+
+  # ---------------------------------------------------------------
+  #  EXPLORE LANDING (Истражите)
+  # ---------------------------------------------------------------
+  - name: explore_landing
+    label: "Истражите (страница)"
+    files:
+      - name: explore_landing_sr
+        label: "Истражите (ћирилица)"
+        file: "content/sr-Cyrl/pages/istrazite.json"
+        format: json
+        fields:
+          - { name: title, label: "Наслов", widget: string }
+          - { name: intro, label: "Увод",   widget: text }
+          - name: featured
+            label: "Истакнути блок"
+            widget: object
+            fields:
+              - { name: eyebrow,     label: "Надтекст",       widget: string }
+              - { name: title,       label: "Наслов",         widget: string }
+              - { name: description, label: "Опис",           widget: text }
+              - { name: ctaHref,     label: "Дугме — линк",   widget: string }
+              - { name: ctaLabel,    label: "Дугме — текст",  widget: string }
+          - name: destinations
+            label: "Дестинације"
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { name: key,         label: "Кључ",         widget: string }
+              - { name: title,       label: "Наслов",       widget: string }
+              - { name: description, label: "Опис",         widget: text }
+              - { name: href,        label: "Линк",         widget: string }
+              - { name: image,       label: "Слика (URL)",  widget: string }
+
+      - name: explore_landing_en
+        label: "Explore page (English)"
+        file: "content/en/pages/istrazite.json"
+        format: json
+        fields:
+          - { name: _machineTranslated, label: "Auto-translated", widget: hidden, default: true }
+          - { name: title, label: "Title", widget: string }
+          - { name: intro, label: "Intro", widget: text }
+          - name: featured
+            label: "Spotlight"
+            widget: object
+            fields:
+              - { name: eyebrow,     label: "Eyebrow",     widget: string }
+              - { name: title,       label: "Title",       widget: string }
+              - { name: description, label: "Description", widget: text }
+              - { name: ctaHref,     label: "CTA link",    widget: string }
+              - { name: ctaLabel,    label: "CTA label",   widget: string }
+          - name: destinations
+            label: "Destinations"
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { name: key,         label: "Key",         widget: string }
+              - { name: title,       label: "Title",       widget: string }
+              - { name: description, label: "Description", widget: text }
+              - { name: href,        label: "Link path",   widget: string }
+              - { name: image,       label: "Image URL",   widget: string }
+
+  # ---------------------------------------------------------------
+  #  ANIMAL MARKING CENTRE
+  # ---------------------------------------------------------------
+  - name: marking
+    label: "Центар за маркирање животиња"
+    files:
+      - name: marking_sr
+        label: "Центар (ћирилица)"
+        file: "content/sr-Cyrl/pages/centar-za-markiranje-zivotinja.json"
+        format: json
+        fields:
+          - { name: title, label: "Наслов", widget: string }
+          - { name: intro, label: "Увод",   widget: text }
+          - name: featured
+            label: "Истакнути блок"
+            widget: object
+            fields:
+              - { name: eyebrow,       label: "Надтекст",   widget: string }
+              - { name: title,         label: "Наслов",     widget: string }
+              - { name: scope,         label: "Обухват",    widget: string }
+              - { name: founded,       label: "Основан",    widget: string }
+              - { name: membership,    label: "Чланство",   widget: string }
+              - { name: resultsHref,   label: "Резултати — линк", widget: string, required: false }
+              - { name: resultsLabel,  label: "Резултати — текст", widget: string, required: false }
+          - name: stats
+            label: "Бројкама"
+            widget: list
+            summary: "{{fields.value}} — {{fields.label}}"
+            fields:
+              - { name: value, label: "Вредност", widget: string }
+              - { name: label, label: "Опис",     widget: string }
+          - { name: body, label: "Опис активности", widget: markdown }
+          - name: species
+            label: "Врсте"
+            widget: list
+            summary: "{{fields.latin}}"
+            fields:
+              - { name: latin,        label: "Латински назив", widget: string }
+              - { name: common,       label: "Народни назив",  widget: string }
+              - { name: photographer, label: "Фотограф",       widget: string }
+              - { name: image,        label: "Слика (URL)",    widget: string }
+          - name: contact
+            label: "Контакт"
+            widget: object
+            fields:
+              - { name: label,       label: "Наслов",   widget: string }
+              - { name: description, label: "Опис",     widget: text }
+              - { name: phone,       label: "Телефон",  widget: string }
+              - { name: email,       label: "Е-пошта",  widget: string }
+
+      - name: marking_en
+        label: "Marking Centre (English)"
+        file: "content/en/pages/centar-za-markiranje-zivotinja.json"
+        format: json
+        fields:
+          - { name: _machineTranslated, label: "Auto-translated", widget: hidden, default: true }
+          - { name: title, label: "Title", widget: string }
+          - { name: intro, label: "Intro", widget: text }
+          - name: featured
+            label: "Spotlight"
+            widget: object
+            fields:
+              - { name: eyebrow,      label: "Eyebrow",     widget: string }
+              - { name: title,        label: "Title",       widget: string }
+              - { name: scope,        label: "Scope",       widget: string }
+              - { name: founded,      label: "Founded",     widget: string }
+              - { name: membership,   label: "Membership",  widget: string }
+              - { name: resultsHref,  label: "Results PDF link", widget: string, required: false }
+              - { name: resultsLabel, label: "Results button label", widget: string, required: false }
+          - name: stats
+            label: "By the numbers"
+            widget: list
+            summary: "{{fields.value}} — {{fields.label}}"
+            fields:
+              - { name: value, label: "Value", widget: string }
+              - { name: label, label: "Label", widget: string }
+          - { name: body, label: "Description", widget: markdown }
+          - name: species
+            label: "Species"
+            widget: list
+            summary: "{{fields.latin}}"
+            fields:
+              - { name: latin,        label: "Latin name",   widget: string }
+              - { name: common,       label: "Common name",  widget: string }
+              - { name: photographer, label: "Photographer", widget: string }
+              - { name: image,        label: "Image URL",    widget: string }
+          - name: contact
+            label: "Contact"
+            widget: object
+            fields:
+              - { name: label,       label: "Heading",     widget: string }
+              - { name: description, label: "Description", widget: text }
+              - { name: phone,       label: "Phone",       widget: string }
+              - { name: email,       label: "Email",       widget: string }
+
+  # ---------------------------------------------------------------
+  #  BULLETIN — index page (lists every issue cover)
+  # ---------------------------------------------------------------
+  - name: bulletin_index
+    label: "Bulletin — насловне"
+    files:
+      - name: bulletin_sr
+        label: "Bulletin (ћирилица)"
+        file: "content/sr-Cyrl/pages/bulletin.json"
+        format: json
+        fields:
+          - { name: title, label: "Наслов",  widget: string }
+          - { name: intro, label: "Увод",    widget: text }
+          - { name: body,  label: "Текст",   widget: markdown }
+          - { name: issn,  label: "ISSN",    widget: string, required: false }
+          - name: issues
+            label: "Бројеви"
+            widget: list
+            summary: "Vol. {{fields.volume}} — {{fields.year}}"
+            fields:
+              - { name: year,   label: "Година",            widget: string }
+              - { name: volume, label: "Број (Vol.)",       widget: number, value_type: int, required: false }
+              - { name: image,  label: "Корица (URL)",      widget: string }
+
+      - name: bulletin_en
+        label: "Bulletin (English)"
+        file: "content/en/pages/bulletin.json"
+        format: json
+        fields:
+          - { name: _machineTranslated, label: "Auto-translated", widget: hidden, default: true }
+          - { name: title, label: "Title", widget: string }
+          - { name: intro, label: "Intro", widget: text }
+          - { name: body,  label: "Body",  widget: markdown }
+          - { name: issn,  label: "ISSN",  widget: string, required: false }
+          - name: issues
+            label: "Issues"
+            widget: list
+            summary: "Vol. {{fields.volume}} — {{fields.year}}"
+            fields:
+              - { name: year,   label: "Year",         widget: string }
+              - { name: volume, label: "Volume",       widget: number, value_type: int, required: false }
+              - { name: image,  label: "Cover URL",    widget: string }
+
+  # ---------------------------------------------------------------
+  #  GLASNIK — index page (links to series A/B/C)
+  # ---------------------------------------------------------------
+  - name: glasnik_index
+    label: "Гласник (страница)"
+    files:
+      - name: glasnik_sr
+        label: "Гласник (ћирилица)"
+        file: "content/sr-Cyrl/pages/glasnik.json"
+        format: json
+        fields:
+          - { name: title, label: "Наслов", widget: string }
+          - { name: intro, label: "Увод",   widget: text }
+          - { name: body,  label: "Текст",  widget: markdown }
+          - name: series
+            label: "Серије"
+            widget: list
+            summary: "{{fields.label}} — {{fields.title}}"
+            fields:
+              - { name: label,       label: "Лабела (Серија А/Б/Ц)", widget: string }
+              - { name: title,       label: "Наслов серије",         widget: string }
+              - { name: description, label: "Опис",                  widget: text }
+              - { name: slug,        label: "Slug (serija-a/б/ц)",   widget: string }
+
+      - name: glasnik_en
+        label: "Glasnik (English)"
+        file: "content/en/pages/glasnik.json"
+        format: json
+        fields:
+          - { name: _machineTranslated, label: "Auto-translated", widget: hidden, default: true }
+          - { name: title, label: "Title", widget: string }
+          - { name: intro, label: "Intro", widget: text }
+          - { name: body,  label: "Body",  widget: markdown }
+          - name: series
+            label: "Series"
+            widget: list
+            summary: "{{fields.label}} — {{fields.title}}"
+            fields:
+              - { name: label,       label: "Label",       widget: string }
+              - { name: title,       label: "Series title", widget: string }
+              - { name: description, label: "Description", widget: text }
+              - { name: slug,        label: "Slug",        widget: string }
+
+  # ---------------------------------------------------------------
+  #  ORGANISATIONAL STRUCTURE
+  # ---------------------------------------------------------------
+  - name: org
+    label: "Организациона структура"
+    files:
+      - name: org_sr
+        label: "Структура (ћирилица)"
+        file: "content/sr-Cyrl/pages/organizaciona-struktura.json"
+        format: json
+        fields:
+          - { name: title, label: "Наслов", widget: string }
+          - { name: intro, label: "Увод",   widget: text }
+          - name: director
+            label: "Директор"
+            widget: object
+            fields:
+              - { name: name,  label: "Име",       widget: string }
+              - { name: title, label: "Функција",  widget: string }
+              - { name: email, label: "Е-пошта",   widget: string, required: false }
+          - name: departments
+            label: "Одељења"
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { name: name, label: "Назив одељења", widget: string }
+              - name: members
+                label: "Чланови"
+                widget: list
+                summary: "{{fields.name}} — {{fields.title}}"
+                fields:
+                  - { name: name,  label: "Име",       widget: string }
+                  - { name: title, label: "Функција",  widget: string }
+                  - { name: email, label: "Е-пошта",   widget: string, required: false }
+                  - { name: lead,  label: "Руководилац", widget: boolean, required: false, default: false }
+
+      - name: org_en
+        label: "Org structure (English)"
+        file: "content/en/pages/organizaciona-struktura.json"
+        format: json
+        fields:
+          - { name: _machineTranslated, label: "Auto-translated", widget: hidden, default: true }
+          - { name: title, label: "Title", widget: string }
+          - { name: intro, label: "Intro", widget: text }
+          - name: director
+            label: "Director"
+            widget: object
+            fields:
+              - { name: name,  label: "Name",  widget: string }
+              - { name: title, label: "Title", widget: string }
+              - { name: email, label: "Email", widget: string, required: false }
+          - name: departments
+            label: "Departments"
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { name: name, label: "Department", widget: string }
+              - name: members
+                label: "Members"
+                widget: list
+                summary: "{{fields.name}} — {{fields.title}}"
+                fields:
+                  - { name: name,  label: "Name",  widget: string }
+                  - { name: title, label: "Title", widget: string }
+                  - { name: email, label: "Email", widget: string, required: false }
+                  - { name: lead,  label: "Department head", widget: boolean, required: false, default: false }
+
+  # ---------------------------------------------------------------
+  #  GODISNJAK — annual reports list (year + cover + PDF link)
+  # ---------------------------------------------------------------
+  - name: godisnjak
+    label: "Годишњак"
+    files:
+      - name: godisnjak_sr
+        label: "Годишњак (ћирилица)"
+        file: "content/sr-Cyrl/pages/godisnjak.json"
+        format: json
+        fields:
+          - { name: title, label: "Наслов", widget: string }
+          - { name: intro, label: "Увод",   widget: text }
+          - name: issues
+            label: "Свеске"
+            widget: list
+            summary: "{{fields.year}}"
+            fields:
+              - { name: year,  label: "Година",        widget: string }
+              - { name: image, label: "Корица (URL)",  widget: string }
+              - { name: href,  label: "PDF (линк)",    widget: string, required: false }
+
+      - name: godisnjak_en
+        label: "Yearbook (English)"
+        file: "content/en/pages/godisnjak.json"
+        format: json
+        fields:
+          - { name: _machineTranslated, label: "Auto-translated", widget: hidden, default: true }
+          - { name: title, label: "Title", widget: string }
+          - { name: intro, label: "Intro", widget: text }
+          - name: issues
+            label: "Issues"
+            widget: list
+            summary: "{{fields.year}}"
+            fields:
+              - { name: year,  label: "Year",       widget: string }
+              - { name: image, label: "Cover URL",  widget: string }
+              - { name: href,  label: "PDF link",   widget: string, required: false }
