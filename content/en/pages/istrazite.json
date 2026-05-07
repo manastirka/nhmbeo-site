@@ -1,0 +1,42 @@
+{
+  "_machineTranslated": true,
+  "title": "Explore",
+  "intro": "Research results, scientific journals and archival editions of the Natural History Museum — publications and programmes that have documented the nature of Serbia for eight decades.",
+  "featured": {
+    "eyebrow": "Research and publications",
+    "title": "Stories from the collections and the field",
+    "description": "We've been ringing birds and bats since 1993, run the international scientific journal Bulletin since 2008, and keep Glasnik — the science series published from 1948 to 1998.",
+    "ctaHref": "/istrazite/bulletin",
+    "ctaLabel": "Browse the Bulletin"
+  },
+  "destinations": [
+    {
+      "key": "marking",
+      "title": "Animal Marking Centre",
+      "description": "National centre for ringing birds and bats. Founded 1993; EURING member since 1997. More than 300,000 birds ringed.",
+      "href": "/istrazite/centar-za-markiranje-zivotinja",
+      "image": "https://nhmbeo.rs/wp-content/uploads/2021/04/Buteo-buteo-photo-Milivoj-Vucanovic.jpg"
+    },
+    {
+      "key": "bulletin",
+      "title": "Bulletin of the Natural History Museum",
+      "description": "The Museum's international scientific journal, published in English since 2008. ISSN 2406-1360 · 18 volumes in the archive.",
+      "href": "/istrazite/bulletin",
+      "image": "https://nhmbeo.rs/wp-content/uploads/2026/03/Korice-WEB.jpg"
+    },
+    {
+      "key": "glasnik",
+      "title": "Glasnik of the Natural History Museum",
+      "description": "Historic scientific journal (1948 — 1998). Three series: A — geology, B — biology, C — forestry and hunting.",
+      "href": "/istrazite/glasnik",
+      "image": "https://nhmbeo.rs/wp-content/uploads/2021/04/galerijanhmbeo.jpg"
+    },
+    {
+      "key": "special",
+      "title": "Special Publications",
+      "description": "Twenty-two monographic special publications of the Museum from 1903 — 1941. Ornithology, entomology, flora, palaeontology.",
+      "href": "/istrazite/posebna-izdanja",
+      "image": "https://nhmbeo.rs/wp-content/uploads/2025/09/Kolaz-2.png"
+    }
+  ]
+}

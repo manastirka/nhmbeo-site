@@ -1,0 +1,247 @@
+# Decap CMS configuration. Editors log in at /admin/ on the live site.
+# Two-stage publishing flow:
+#   1. Editor saves a change → CMS commits to GitHub (main branch).
+#   2. GitHub Actions builds the site and FTP-uploads to Hostinger.
+#
+# Backend = Git Gateway (Netlify Identity) — staff log in with email,
+# never need a GitHub account.
+
+backend:
+  name: git-gateway
+  branch: main
+
+publish_mode: editorial_workflow
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+# Top-level locale switcher in the CMS sidebar.
+i18n:
+  structure: multiple_folders
+  locales: [sr-Cyrl, en]
+  default_locale: sr-Cyrl
+
+site_url: https://nhmbeo.aleksandarlukovic.com
+display_url: https://nhmbeo.aleksandarlukovic.com
+logo_url: https://nhmbeo.rs/wp-content/uploads/2021/04/ezgif.com-gif-maker.gif
+
+collections:
+  # ---------------------------------------------------------------
+  #  NEWS — most frequently updated content. One entry = one article.
+  # ---------------------------------------------------------------
+  - name: news_sr
+    label: "Вести (ћирилица)"
+    label_singular: "Вест"
+    folder: "content/sr-Cyrl/news"
+    create: true
+    delete: true
+    extension: json
+    format: json
+    slug: "{{slug}}"
+    identifier_field: slug
+    summary: "{{title}} — {{date}}"
+    sortable_fields: ['date', 'title']
+    fields:
+      - { name: slug,    label: "Кратки URL (slug)", widget: string,   hint: "Без размака. Користите цртице. Пример: otvorena-izlozba-2026" }
+      - { name: title,   label: "Наслов",          widget: string }
+      - { name: date,    label: "Датум",           widget: datetime, format: 'YYYY-MM-DD', date_format: 'YYYY-MM-DD', time_format: false }
+      - { name: excerpt, label: "Кратак опис",     widget: text }
+      - { name: image,   label: "Главна слика (URL)", widget: string, hint: "Залепите URL слике (нпр. са nhmbeo.rs или из медија доле)." }
+      - { name: body,    label: "Текст",           widget: markdown }
+      - name: images
+        label: "Галерија (URL-ови додатних слика)"
+        widget: list
+        required: false
+        summary: "{{fields.url}}"
+        field: { name: url, label: "URL", widget: string }
+
+  - name: news_en
+    label: "News (English)"
+    label_singular: "Article"
+    folder: "content/en/news"
+    create: true
+    delete: true
+    extension: json
+    format: json
+    slug: "{{slug}}"
+    identifier_field: slug
+    summary: "{{title}} — {{date}}"
+    sortable_fields: ['date', 'title']
+    fields:
+      - { name: slug,    label: "Slug (URL)",    widget: string }
+      - { name: title,   label: "Title",         widget: string }
+      - { name: date,    label: "Date",          widget: datetime, format: 'YYYY-MM-DD', date_format: 'YYYY-MM-DD', time_format: false }
+      - { name: excerpt, label: "Short summary", widget: text }
+      - { name: image,   label: "Hero image URL", widget: string }
+      - { name: body,    label: "Body",          widget: markdown }
+      - name: images
+        label: "Gallery (extra image URLs)"
+        widget: list
+        required: false
+        summary: "{{fields.url}}"
+        field: { name: url, label: "URL", widget: string }
+      - { name: _machineTranslated, label: "Auto-translated", widget: hidden, default: true }
+
+  # ---------------------------------------------------------------
+  #  HOME PAGE — hero, tiles, featured exhibition
+  # ---------------------------------------------------------------
+  - name: home
+    label: "Почетна страница"
+    files:
+      - name: home_sr
+        label: "Почетна (ћирилица)"
+        file: "content/sr-Cyrl/home.json"
+        format: json
+        fields:
+          - name: hero
+            label: "Херо (горњи део)"
+            widget: object
+            fields:
+              - { name: eyebrow,  label: "Надтекст",   widget: string }
+              - { name: title,    label: "Наслов",     widget: string }
+              - { name: subtitle, label: "Поднаслов",  widget: text }
+              - { name: image,    label: "Слика (URL)", widget: string }
+          - name: tiles
+            label: "Плочице — Планирајте посету"
+            widget: object
+            fields:
+              - { name: title, label: "Наслов секције", widget: string }
+              - name: items
+                label: "Плочице"
+                widget: list
+                summary: "{{fields.title}}"
+                fields:
+                  - { name: title,       label: "Наслов плочице", widget: string }
+                  - { name: description, label: "Опис",           widget: string }
+                  - { name: href,        label: "Путања",         widget: string }
+          - name: intro
+            label: "Уводни одељак"
+            widget: object
+            fields:
+              - { name: eyebrow, label: "Надтекст", widget: string }
+              - { name: title,   label: "Наслов",   widget: string }
+              - { name: body,    label: "Текст",    widget: text }
+          - name: stats
+            label: "Бројкама"
+            widget: list
+            summary: "{{fields.value}} — {{fields.label}}"
+            fields:
+              - { name: value, label: "Број/Текст", widget: string }
+              - { name: label, label: "Опис",       widget: string }
+          - name: featured
+            label: "Истакнута изложба"
+            widget: object
+            fields:
+              - { name: eyebrow,     label: "Надтекст", widget: string }
+              - { name: title,       label: "Наслов",   widget: string }
+              - { name: description, label: "Опис",     widget: text }
+              - { name: href,        label: "Путања",   widget: string }
+              - { name: image,       label: "Слика URL", widget: string }
+              - { name: cta,         label: "Текст дугмета", widget: string }
+
+      - name: home_en
+        label: "Home (English)"
+        file: "content/en/home.json"
+        format: json
+        fields:
+          - { name: _machineTranslated, label: "Auto-translated", widget: hidden, default: true }
+          - name: hero
+            label: "Hero"
+            widget: object
+            fields:
+              - { name: eyebrow,  label: "Eyebrow",  widget: string }
+              - { name: title,    label: "Title",    widget: string }
+              - { name: subtitle, label: "Subtitle", widget: text }
+              - { name: image,    label: "Image URL", widget: string }
+          - name: tiles
+            label: "Plan-your-visit tiles"
+            widget: object
+            fields:
+              - { name: title, label: "Section title", widget: string }
+              - name: items
+                label: "Tiles"
+                widget: list
+                summary: "{{fields.title}}"
+                fields:
+                  - { name: title,       label: "Title",       widget: string }
+                  - { name: description, label: "Description", widget: string }
+                  - { name: href,        label: "Link path",   widget: string }
+          - name: intro
+            label: "Intro"
+            widget: object
+            fields:
+              - { name: eyebrow, label: "Eyebrow", widget: string }
+              - { name: title,   label: "Title",   widget: string }
+              - { name: body,    label: "Body",    widget: text }
+          - name: stats
+            label: "Stats"
+            widget: list
+            summary: "{{fields.value}} — {{fields.label}}"
+            fields:
+              - { name: value, label: "Value", widget: string }
+              - { name: label, label: "Label", widget: string }
+          - name: featured
+            label: "Featured exhibition"
+            widget: object
+            fields:
+              - { name: eyebrow,     label: "Eyebrow",    widget: string }
+              - { name: title,       label: "Title",      widget: string }
+              - { name: description, label: "Description", widget: text }
+              - { name: href,        label: "Link path",   widget: string }
+              - { name: image,       label: "Image URL",   widget: string }
+              - { name: cta,         label: "CTA label",   widget: string }
+
+  # ---------------------------------------------------------------
+  #  SITE-WIDE STRINGS (footer, nav, contact info)
+  # ---------------------------------------------------------------
+  - name: ui
+    label: "Преводи и контакт подаци"
+    files:
+      - name: ui_sr
+        label: "UI (ћирилица)"
+        file: "content/sr-Cyrl/ui.json"
+        format: json
+        editor: { preview: false }
+        fields:
+          - { name: site, label: "Сајт", widget: object, fields: [
+              { name: shortName, label: "Скраћено име", widget: string },
+              { name: longName,  label: "Пуно име",    widget: string },
+              { name: tagline,   label: "Слоган",       widget: string }
+            ] }
+          - { name: footer, label: "Подножје", widget: object, fields: [
+              { name: main_title,   label: "Главна локација — назив", widget: string },
+              { name: main_address, label: "Главна локација — адреса", widget: string },
+              { name: main_phone,   label: "Главна локација — телефон", widget: string },
+              { name: main_phoneRaw, label: "Главна локација — телефон без размака", widget: string },
+              { name: main_email,   label: "Главна локација — е-пошта", widget: string },
+              { name: gallery_title,   label: "Галерија — назив",  widget: string },
+              { name: gallery_address, label: "Галерија — адреса", widget: string },
+              { name: gallery_phone,   label: "Галерија — телефон", widget: string },
+              { name: gallery_phoneRaw, label: "Галерија — телефон без размака", widget: string },
+              { name: gallery_email,   label: "Галерија — е-пошта", widget: string },
+              { name: contactLink,     label: "Линк ка контакту",   widget: string }
+            ] }
+      - name: ui_en
+        label: "UI (English)"
+        file: "content/en/ui.json"
+        format: json
+        editor: { preview: false }
+        fields:
+          - { name: site, label: "Site", widget: object, fields: [
+              { name: shortName, label: "Short name", widget: string },
+              { name: longName,  label: "Full name",  widget: string },
+              { name: tagline,   label: "Tagline",    widget: string }
+            ] }
+          - { name: footer, label: "Footer", widget: object, fields: [
+              { name: main_title,   label: "Main — title", widget: string },
+              { name: main_address, label: "Main — address", widget: string },
+              { name: main_phone,   label: "Main — phone", widget: string },
+              { name: main_phoneRaw, label: "Main — phone (digits only)", widget: string },
+              { name: main_email,   label: "Main — email", widget: string },
+              { name: gallery_title,   label: "Gallery — title", widget: string },
+              { name: gallery_address, label: "Gallery — address", widget: string },
+              { name: gallery_phone,   label: "Gallery — phone", widget: string },
+              { name: gallery_phoneRaw, label: "Gallery — phone (digits only)", widget: string },
+              { name: gallery_email,   label: "Gallery — email", widget: string },
+              { name: contactLink,     label: "Contact link label", widget: string }
+            ] }

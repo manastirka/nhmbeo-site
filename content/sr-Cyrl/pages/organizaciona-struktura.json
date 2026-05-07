@@ -1,0 +1,80 @@
+{
+  "title": "Организациона структура",
+  "intro": "Тим Природњачког музеја: директор и шест одељења — кустоси, конзерватори, истраживачи и стручне службе.",
+  "director": {
+    "name": "MSc Славко Спасић",
+    "title": "Директор · виши кустос",
+    "email": "slavko.spasic@nhmbeo.rs"
+  },
+  "departments": [
+    {
+      "name": "Одсек општих и правних послова",
+      "members": [
+        { "name": "Ана Живановић", "title": "секретар", "email": "ana.zivanovic@nhmbeo.rs" },
+        { "name": "Ана Ковачевић", "title": "технички секретар", "email": "ana.kovacevic@nhmbeo.rs" },
+        { "name": "Бора Милићевић", "title": "техничар у музејској делатности", "email": "bora.m@nhmbeo.rs" },
+        { "name": "Предраг Илић", "title": "техничар у музејској делатности", "email": "pedja@nhmbeo.rs" },
+        { "name": "Мср Оливера Аломеровић", "title": "дипл. библиотекар", "email": "biblioteka@nhmbeo.rs" },
+        { "name": "Данијела Мијаиловић", "title": "радник за одржавање хигијене" },
+        { "name": "Невенка Јанковић", "title": "радник за одржавање хигијене" }
+      ]
+    },
+    {
+      "name": "Група за финансијско-рачуноводствене послове",
+      "members": [
+        { "name": "MSc Душица Ивић", "title": "помоћник директора · руководилац одељења финансија", "email": "dusica.ivic@nhmbeo.rs" },
+        { "name": "Милена Радочај", "title": "финансијско-рачуноводствени референт", "email": "milenar@nhmbeo.rs" },
+        { "name": "Милица Томић", "title": "финансијско-рачуноводствени сарадник", "email": "milica@nhmbeo.rs" }
+      ]
+    },
+    {
+      "name": "Група за едукацију, комуникацију и маркетинг",
+      "members": [
+        { "name": "Дипл. инж. Драгана Вучићевић", "title": "виши кустос", "email": "draganav@nhmbeo.rs" },
+        { "name": "Мср Симка Вукојевић", "title": "музејски педагог", "email": "simka.vukojevic@nhmbeo.rs" }
+      ]
+    },
+    {
+      "name": "Група за изложбене послове — Галерија",
+      "members": [
+        { "name": "Милица Ракић", "title": "организаторка туристичке и услужне делатности", "email": "galerija@nhmbeo.rs" },
+        { "name": "Снежана Јовановић", "title": "водич" }
+      ]
+    },
+    {
+      "name": "Биолошко одељење",
+      "members": [
+        { "name": "Верица Стојановић", "title": "руководилац Биолошког одељења · кустос ботаничар", "email": "verica.stojanovic@nhmbeo.rs", "lead": true },
+        { "name": "Дубравка Вучић", "title": "музејски саветник, ихтиолог", "email": "dubravka.vucic@nhmbeo.rs" },
+        { "name": "Милош Јовић", "title": "музејски саветник, ентомолог", "email": "milos.jovic@nhmbeo.rs" },
+        { "name": "Др Борис Иванчевић", "title": "музејски саветник, миколог", "email": "boris@nhmbeo.rs" },
+        { "name": "Др Ана Пауновић", "title": "музејски саветник, херпетолог", "email": "ana.paunovic@nhmbeo.rs" },
+        { "name": "Дипл. инж. Александар Стојановић", "title": "конзерватор, ентомолог", "email": "aleksandar@nhmbeo.rs" },
+        { "name": "Др Александра Савић", "title": "музејски саветник, ботаничар / етноботаничар", "email": "aleksandra.savic@nhmbeo.rs" },
+        { "name": "Др Марјан Никетић", "title": "музејски саветник, ботаничар", "email": "mniketic@nhmbeo.rs" },
+        { "name": "Горана Петковски", "title": "конзерватор", "email": "gorana.petkovski@nhmbeo.rs" },
+        { "name": "Др Марко Несторовић", "title": "музејски саветник, ботаничар / херболог", "email": "marko.nestorovic@nhmbeo.rs" },
+        { "name": "Зорана Марковић", "title": "кустос", "email": "zorana.markovic@nhmbeo.rs" },
+        { "name": "Мср Вук Попић", "title": "кустос, орнитолог", "email": "vuk.popic@nhmbeo.rs" },
+        { "name": "Милош Мрваљевић", "title": "препаратор приправник", "email": "milos.mrvaljevic@nhmbeo.rs" },
+        { "name": "Јован Кокотовић", "title": "кустос приправник", "email": "jovan.kokotovic@nhmbeo.rs" }
+      ]
+    },
+    {
+      "name": "Геолошко одељење",
+      "members": [
+        { "name": "Др Биљана Митровић", "title": "руководилац Геолошког одељења · музејски саветник, палеозоолог", "email": "biljana.mitrovic@nhmbeo.rs", "lead": true },
+        { "name": "Др Зоран Марковић", "title": "музејски саветник, палеозоолог", "email": "zoran.markovic@nhmbeo.rs" },
+        { "name": "Мср Сања Алабурић", "title": "музејски саветник, палеозоолог", "email": "sanja.pavic@nhmbeo.rs" },
+        { "name": "Др Деса Ђорђевић-Милутиновић", "title": "музејски саветник, палеоботаничар", "email": "desadjm@nhmbeo.rs" },
+        { "name": "Др Александар Луковић", "title": "кустос, минералог", "email": "aca.lukovic@nhmbeo.rs" },
+        { "name": "Др Драгана Ђурић", "title": "музејски саветник, палеозоолог", "email": "dragana.djuric@nhmbeo.rs" },
+        { "name": "Татјана Милић Бабић", "title": "виши кустос, петролог", "email": "tatjana.milicbabic@nhmbeo.rs" },
+        { "name": "Дипл. инж. Ранко Пејовић", "title": "кустос, палеозоолог", "email": "pejovic.ranko@nhmbeo.rs" },
+        { "name": "Милош Миливојевић", "title": "виши препаратор за геолошке збирке", "email": "milos.milivojevic@nhmbeo.rs" },
+        { "name": "Мср Бранко Радуловић", "title": "кустос за геолошке збирке", "email": "branko.radulovic@nhmbeo.rs" },
+        { "name": "Мср Ненад Младеновић", "title": "конзерватор у геолошком одељењу", "email": "nenad.mladenovic@nhmbeo.rs" }
+      ]
+    }
+  ]
+}

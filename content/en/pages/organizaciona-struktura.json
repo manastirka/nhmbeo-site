@@ -1,0 +1,81 @@
+{
+  "_machineTranslated": true,
+  "title": "Organisational structure",
+  "intro": "The Natural History Museum team: the Director and six departments — curators, conservators, researchers, and support staff.",
+  "director": {
+    "name": "Slavko Spasić, MSc",
+    "title": "Director · Senior Curator",
+    "email": "slavko.spasic@nhmbeo.rs"
+  },
+  "departments": [
+    {
+      "name": "General and Legal Affairs",
+      "members": [
+        { "name": "Ana Živanović", "title": "Secretary", "email": "ana.zivanovic@nhmbeo.rs" },
+        { "name": "Ana Kovačević", "title": "Administrative Secretary", "email": "ana.kovacevic@nhmbeo.rs" },
+        { "name": "Bora Milićević", "title": "Museum Technician", "email": "bora.m@nhmbeo.rs" },
+        { "name": "Predrag Ilić", "title": "Museum Technician", "email": "pedja@nhmbeo.rs" },
+        { "name": "Olivera Alomerović, MSc", "title": "Librarian", "email": "biblioteka@nhmbeo.rs" },
+        { "name": "Danijela Mijailović", "title": "Cleaning staff" },
+        { "name": "Nevenka Janković", "title": "Cleaning staff" }
+      ]
+    },
+    {
+      "name": "Finance and Accounting",
+      "members": [
+        { "name": "Dušica Ivić, MSc", "title": "Deputy Director · Head of Finance", "email": "dusica.ivic@nhmbeo.rs" },
+        { "name": "Milena Radočaj", "title": "Financial-Accounting Officer", "email": "milenar@nhmbeo.rs" },
+        { "name": "Milica Tomić", "title": "Financial-Accounting Associate", "email": "milica@nhmbeo.rs" }
+      ]
+    },
+    {
+      "name": "Education, Communications & Marketing",
+      "members": [
+        { "name": "Dragana Vučićević, BSc", "title": "Senior Curator", "email": "draganav@nhmbeo.rs" },
+        { "name": "Simka Vukojević, MSc", "title": "Museum Educator", "email": "simka.vukojevic@nhmbeo.rs" }
+      ]
+    },
+    {
+      "name": "Exhibitions — Gallery",
+      "members": [
+        { "name": "Milica Rakić", "title": "Tourism and Visitor Services Coordinator", "email": "galerija@nhmbeo.rs" },
+        { "name": "Snežana Jovanović", "title": "Guide" }
+      ]
+    },
+    {
+      "name": "Department of Biology",
+      "members": [
+        { "name": "Verica Stojanović", "title": "Head of Biology · Curator (Botany)", "email": "verica.stojanovic@nhmbeo.rs", "lead": true },
+        { "name": "Dubravka Vučić", "title": "Senior Curator (Ichthyology)", "email": "dubravka.vucic@nhmbeo.rs" },
+        { "name": "Miloš Jović", "title": "Senior Curator (Entomology)", "email": "milos.jovic@nhmbeo.rs" },
+        { "name": "Boris Ivančević, PhD", "title": "Senior Curator (Mycology)", "email": "boris@nhmbeo.rs" },
+        { "name": "Ana Paunović, PhD", "title": "Senior Curator (Herpetology)", "email": "ana.paunovic@nhmbeo.rs" },
+        { "name": "Aleksandar Stojanović, BSc", "title": "Conservator (Entomology)", "email": "aleksandar@nhmbeo.rs" },
+        { "name": "Aleksandra Savić, PhD", "title": "Senior Curator (Botany / Ethnobotany)", "email": "aleksandra.savic@nhmbeo.rs" },
+        { "name": "Marjan Niketić, PhD", "title": "Senior Curator (Botany)", "email": "mniketic@nhmbeo.rs" },
+        { "name": "Gorana Petkovski", "title": "Conservator", "email": "gorana.petkovski@nhmbeo.rs" },
+        { "name": "Marko Nestorović, PhD", "title": "Senior Curator (Botany / Herbology)", "email": "marko.nestorovic@nhmbeo.rs" },
+        { "name": "Zorana Marković", "title": "Curator", "email": "zorana.markovic@nhmbeo.rs" },
+        { "name": "Vuk Popić, MSc", "title": "Curator (Ornithology)", "email": "vuk.popic@nhmbeo.rs" },
+        { "name": "Miloš Mrvaljević", "title": "Assistant Preparator", "email": "milos.mrvaljevic@nhmbeo.rs" },
+        { "name": "Jovan Kokotović", "title": "Assistant Curator", "email": "jovan.kokotovic@nhmbeo.rs" }
+      ]
+    },
+    {
+      "name": "Department of Geology",
+      "members": [
+        { "name": "Biljana Mitrović, PhD", "title": "Head of Geology · Senior Curator (Palaeozoology)", "email": "biljana.mitrovic@nhmbeo.rs", "lead": true },
+        { "name": "Zoran Marković, PhD", "title": "Senior Curator (Palaeozoology)", "email": "zoran.markovic@nhmbeo.rs" },
+        { "name": "Sanja Alaburić, MSc", "title": "Senior Curator (Palaeozoology)", "email": "sanja.pavic@nhmbeo.rs" },
+        { "name": "Desa Đorđević-Milutinović, PhD", "title": "Senior Curator (Palaeobotany)", "email": "desadjm@nhmbeo.rs" },
+        { "name": "Aleksandar Luković, PhD", "title": "Curator (Mineralogy)", "email": "aca.lukovic@nhmbeo.rs" },
+        { "name": "Dragana Đurić, PhD", "title": "Senior Curator (Palaeozoology)", "email": "dragana.djuric@nhmbeo.rs" },
+        { "name": "Tatjana Milić Babić", "title": "Senior Curator (Petrology)", "email": "tatjana.milicbabic@nhmbeo.rs" },
+        { "name": "Ranko Pejović, BSc", "title": "Curator (Palaeozoology)", "email": "pejovic.ranko@nhmbeo.rs" },
+        { "name": "Miloš Milivojević", "title": "Senior Preparator, Geology Collections", "email": "milos.milivojevic@nhmbeo.rs" },
+        { "name": "Branko Radulović, MSc", "title": "Curator, Geology Collections", "email": "branko.radulovic@nhmbeo.rs" },
+        { "name": "Nenad Mladenović, MSc", "title": "Conservator (Geology)", "email": "nenad.mladenovic@nhmbeo.rs" }
+      ]
+    }
+  ]
+}

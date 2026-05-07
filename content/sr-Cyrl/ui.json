@@ -1,0 +1,87 @@
+{
+  "site": {
+    "shortName": "Природњачки музеј",
+    "longName": "Природњачки музеј у Београду",
+    "tagline": "основан 1895."
+  },
+  "nav": {
+    "home": "Почетна",
+    "visit": "Посетите нас",
+    "visit_gallery": "Галерија Природњачког музеја",
+    "visit_exhibition": "Изложба у Галерији",
+    "visit_tickets": "Цене улазница и заказивање",
+    "visit_shop": "Продавница",
+    "about": "О музеју",
+    "about_org": "Организациона структура",
+    "about_annual": "Годишњак Природњачког музеја",
+    "about_documents": "Документи",
+    "about_procurement": "Јавне набавке",
+    "about_calls": "Јавни позив",
+    "about_regulations": "Нормативна акта",
+    "about_plans": "Планови и извештаји",
+    "explore": "Истражите",
+    "explore_marking": "Центар за маркирање животиња",
+    "explore_bulletin": "Bulletin of the Natural History Museum",
+    "explore_glasnik": "Гласник Природњачког музеја",
+    "explore_special": "Посебна издања",
+    "news": "Вести",
+    "contact": "Контакт",
+    "tickets_short": "Улазнице",
+    "open": "Отвори мени",
+    "close": "Затвори мени"
+  },
+  "home": {
+    "founded": "Основан 19. децембра 1895. године",
+    "intro_title": "О музеју",
+    "ctaVisit": "Посетите нас",
+    "ctaNews": "Све вести"
+  },
+  "footer": {
+    "main_title": "Природњачки музеј",
+    "main_address": "Његошева 51, 11000 Београд",
+    "main_phone": "+381 11 344 21 49",
+    "main_phoneRaw": "+381113442149",
+    "main_email": "nhmbeo@nhmbeo.rs",
+    "gallery_title": "Галерија Природњачког музеја",
+    "gallery_address": "Мали Калемегдан 5, 11000 Београд",
+    "gallery_phone": "+381 11 328 43 17",
+    "gallery_phoneRaw": "+381113284317",
+    "gallery_email": "galerija@nhmbeo.rs",
+    "contactLink": "Контакт"
+  },
+  "newsletter": {
+    "title": "Будите у току",
+    "description": "Пријавите се за нашу мејлинг листу и сазнајте о новим изложбама и догађајима.",
+    "namePlaceholder": "Име",
+    "emailPlaceholder": "Е-пошта",
+    "submit": "Пријави се",
+    "submitting": "Шаље се…",
+    "success": "Хвала! Успешно сте пријављени.",
+    "error": "Дошло је до грешке. Покушајте поново."
+  },
+  "documents": {
+    "empty": "Нема докумената за приказ.",
+    "openPdf": "Отвори PDF"
+  },
+  "shop": {
+    "count": "{count, plural, one {# производ} few {# производа} other {# производа}}",
+    "sortBy": "Сортирај",
+    "sort_default": "Подразумевано",
+    "sort_name": "По називу",
+    "sort_priceAsc": "Цена: ниже → више",
+    "sort_priceDesc": "Цена: више → ниже",
+    "noImage": "Нема слике"
+  },
+  "news": {
+    "back": "Све вести",
+    "empty": "Нема вести за приказ."
+  },
+  "contact": {
+    "main": "Природњачки музеј",
+    "gallery": "Галерија",
+    "social": "Друштвене мреже",
+    "addressLabel": "Адреса",
+    "phoneLabel": "Телефон",
+    "emailLabel": "Е-пошта"
+  }
+}

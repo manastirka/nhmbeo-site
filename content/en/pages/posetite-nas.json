@@ -1,0 +1,62 @@
+{
+  "_machineTranslated": true,
+  "title": "Visit Us",
+  "intro": "Welcome to the Gallery of the Natural History Museum on Mali Kalemegdan. Explore the current exhibition, meet our collection, and take a piece of the story home.",
+  "featured": {
+    "eyebrow": "Plan your visit",
+    "title": "Come to Kalemegdan",
+    "address": "Gallery of the Natural History Museum · Mali Kalemegdan 5, Belgrade",
+    "phone": "+381 11 328 43 17",
+    "email": "galerija@nhmbeo.rs",
+    "ctaHref": "/posetite-nas/ulaznice",
+    "ctaLabel": "Buy tickets"
+  },
+  "stats": [
+    {
+      "value": "10am–9pm",
+      "label": "Tuesday–Sunday (May–Oct)"
+    },
+    {
+      "value": "10am–6pm",
+      "label": "Tuesday–Sunday (Nov–Apr)"
+    },
+    {
+      "value": "Thu 10–12",
+      "label": "free admission"
+    },
+    {
+      "value": "Monday",
+      "label": "closed"
+    }
+  ],
+  "destinations": [
+    {
+      "key": "galerija",
+      "title": "Museum Gallery",
+      "description": "Exhibition venue on Mali Kalemegdan — a historic 19th-century building, refurbished in 1994.",
+      "href": "/posetite-nas/galerija",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/2/28/KalemegdanGalery.JPG"
+    },
+    {
+      "key": "izlozba",
+      "title": "Current exhibition",
+      "description": "Lords of the Depths — Sharks and Rays of the Adriatic. Co-produced with the Natural History Museum of Montenegro; on view through June 2026.",
+      "href": "/posetite-nas/izlozba-u-galeriji",
+      "image": "https://nhmbeo.rs/wp-content/uploads/2026/03/655190076_18385450090094058_7451136653472061076_n.jpg"
+    },
+    {
+      "key": "ulaznice",
+      "title": "Tickets",
+      "description": "Individual, family, and guided-tour tickets. Free admission Thursday 10am–12pm.",
+      "href": "/posetite-nas/ulaznice",
+      "image": "https://nhmbeo.rs/wp-content/uploads/2025/09/Kolaz-1.jpg"
+    },
+    {
+      "key": "prodavnica",
+      "title": "Shop",
+      "description": "Catalogues, guides, monographs, and souvenirs from the museum's collections.",
+      "href": "/posetite-nas/prodavnica",
+      "image": "https://nhmbeo.rs/wp-content/uploads/2025/09/Prednja-i-zadnja-strana-14.jpg"
+    }
+  ]
+}

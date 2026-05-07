@@ -1,0 +1,117 @@
+# Build the static export and FTP-upload it to Hostinger.
+# Triggered on every push to main (including auto-commits made by Decap CMS
+# from the /admin/ panel) and manually via the Actions tab.
+#
+# Required GitHub Secrets (Settings → Secrets and variables → Actions):
+#   FTP_HOST                 e.g. 92.113.19.2
+#   FTP_PORT                 e.g. 21
+#   FTP_USER                 e.g. u583672902.nhmbeo.aleksandarlukovic.com
+#   FTP_PASSWORD             your Hostinger FTP password
+#   FTP_REMOTE_PATH          "." for subdomain accounts (default)
+#
+# Optional secrets:
+#   NEXT_PUBLIC_SITE_URL                e.g. https://nhmbeo.aleksandarlukovic.com
+#   NEXT_PUBLIC_GA_MEASUREMENT_ID       e.g. G-XXXXXXXXXX
+#   NEXT_PUBLIC_GOOGLE_VERIFICATION     Search Console token
+
+name: Build & deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Park /api directory (static export incompatible)
+        run: |
+          if [ -d src/app/api ]; then
+            mv src/app/api /tmp/api-bak
+          fi
+
+      - name: Build static export
+        env:
+          NEXT_OUTPUT: export
+          NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
+          NEXT_PUBLIC_GA_MEASUREMENT_ID: ${{ secrets.NEXT_PUBLIC_GA_MEASUREMENT_ID }}
+          NEXT_PUBLIC_GOOGLE_VERIFICATION: ${{ secrets.NEXT_PUBLIC_GOOGLE_VERIFICATION }}
+        run: npm run build
+
+      - name: Restore /api directory
+        if: always()
+        run: |
+          if [ -d /tmp/api-bak ]; then
+            mv /tmp/api-bak src/app/api
+          fi
+
+      - name: Add Apache .htaccess + root redirect
+        run: |
+          cat > out/.htaccess <<'HT'
+          RewriteEngine On
+          RewriteRule ^$ /sr-Cyrl/ [R=302,L]
+          RewriteCond %{REQUEST_FILENAME} !-f
+          RewriteCond %{REQUEST_FILENAME} !-d
+          RewriteCond %{REQUEST_URI} !\.[a-zA-Z0-9]+$
+          RewriteRule ^(.+?)/?$ $1/index.html [L]
+          <IfModule mod_expires.c>
+            ExpiresActive On
+            ExpiresByType image/jpeg "access plus 30 days"
+            ExpiresByType image/png  "access plus 30 days"
+            ExpiresByType image/webp "access plus 30 days"
+            ExpiresByType image/gif  "access plus 30 days"
+            ExpiresByType text/css   "access plus 7 days"
+            ExpiresByType application/javascript "access plus 7 days"
+          </IfModule>
+          HT
+          cat > out/index.html <<'IDX'
+          <!doctype html>
+          <meta charset="utf-8">
+          <title>Природњачки музеј у Београду</title>
+          <meta http-equiv="refresh" content="0; url=/sr-Cyrl/">
+          <link rel="canonical" href="/sr-Cyrl/">
+          <p>Преусмеравање на <a href="/sr-Cyrl/">/sr-Cyrl/</a>…</p>
+          IDX
+
+      - name: Install lftp
+        run: sudo apt-get update && sudo apt-get install -y lftp
+
+      - name: Upload via FTP
+        env:
+          FTP_HOST: ${{ secrets.FTP_HOST }}
+          FTP_PORT: ${{ secrets.FTP_PORT }}
+          FTP_USER: ${{ secrets.FTP_USER }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          FTP_REMOTE_PATH: ${{ secrets.FTP_REMOTE_PATH }}
+        run: |
+          : "${FTP_REMOTE_PATH:=.}"
+          lftp -u "${FTP_USER},${FTP_PASSWORD}" -p "${FTP_PORT}" "${FTP_HOST}" <<EOF
+          set ftp:ssl-allow yes
+          set ftp:ssl-protect-data yes
+          set ssl:verify-certificate no
+          set net:max-retries 3
+          set net:reconnect-interval-base 5
+          set mirror:use-pget-n 4
+          mirror -R --delete --parallel=4 \\
+            --exclude-glob .well-known --exclude-glob .git \\
+            out/ ${FTP_REMOTE_PATH}/
+          bye
+          EOF

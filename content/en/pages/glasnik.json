@@ -1,0 +1,27 @@
+{
+  "title": "",
+  "intro": "The first issue of the Natural History Museum's scientific journal was published in 1948 under the name GLASNIK OF THE NATURAL HISTORY MUSEUM OF THE SERBIAN LANDS, series A – geological sciences, and the following year series B – biological sciences. From 1958 the journal title was changed to GLASNIK OF THE NATURAL HISTORY MUSEUM.",
+  "body": "The first issue of the Natural History Museum's scientific journal was published in 1948 under the name GLASNIK OF THE NATURAL HISTORY MUSEUM OF THE SERBIAN LANDS, series A – geological sciences, and the following year series B – biological sciences. From 1958 the journal title was changed to GLASNIK OF THE NATURAL HISTORY MUSEUM.\n\nThe Museum of Forestry and Hunting was a separate institution that published its own scientific journal, GLASNIK OF THE MUSEUM OF FORESTRY AND HUNTING. After this museum was merged with the Natural History Museum in 1973, that journal continued to be published as Glasnik of the Natural History Museum series C – forestry and hunting, with the issue numbering continuing.\n\nUnder this name, the journal was published until 1998. Since 2008 the Natural History Museum has been publishing a new series of its scientific journal under the title BULLETIN OF THE NATURAL HISTORY MUSEUM IN BELGRADE, in which series A and B have been merged into a single New Series.\n\n## Glasnik of the Natural History Museum, series A – geological sciences\n\n## Glasnik of the Natural History Museum, series B – biological sciences\n\n## Glasnik of the Natural History Museum, series C – forestry and hunting\n\n- + 381 11 3442147\n- nhmbeo@nhmbeo.rs\n- Natural History Museum\n- Gallery of the Natural History Museum\n\n### Newsletter",
+  "_machineTranslated": true,
+  "images": [],
+  "series": [
+    {
+      "label": "Series A",
+      "title": "Geological sciences",
+      "description": "Geological-sciences journal. Published since 1948; merged into the Bulletin's New Series in 2008.",
+      "slug": "serija-a"
+    },
+    {
+      "label": "Series B",
+      "title": "Biological sciences",
+      "description": "Biological-sciences journal. First volume published in 1949.",
+      "slug": "serija-b"
+    },
+    {
+      "label": "Series C",
+      "title": "Forestry & hunting",
+      "description": "Continuation of the Glasnik of the Museum of Forestry and Hunting, merged in 1973.",
+      "slug": "serija-c"
+    }
+  ]
+}

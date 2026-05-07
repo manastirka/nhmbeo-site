@@ -1,0 +1,87 @@
+{
+  "site": {
+    "shortName": "Natural History Museum",
+    "longName": "Natural History Museum in Belgrade",
+    "tagline": "founded 1895"
+  },
+  "nav": {
+    "home": "Home",
+    "visit": "Visit Us",
+    "visit_gallery": "Museum Gallery",
+    "visit_exhibition": "Current Exhibition",
+    "visit_tickets": "Tickets & Booking",
+    "visit_shop": "Shop",
+    "about": "About",
+    "about_org": "Organisational Structure",
+    "about_annual": "Annual Report",
+    "about_documents": "Documents",
+    "about_procurement": "Public Procurement",
+    "about_calls": "Public Calls",
+    "about_regulations": "Regulations",
+    "about_plans": "Plans & Reports",
+    "explore": "Explore",
+    "explore_marking": "Animal Marking Centre",
+    "explore_bulletin": "Bulletin of the Natural History Museum",
+    "explore_glasnik": "Glasnik",
+    "explore_special": "Special Publications",
+    "news": "News",
+    "contact": "Contact",
+    "tickets_short": "Tickets",
+    "open": "Open menu",
+    "close": "Close menu"
+  },
+  "home": {
+    "founded": "Founded on 19 December 1895",
+    "intro_title": "About the Museum",
+    "ctaVisit": "Plan your visit",
+    "ctaNews": "All news"
+  },
+  "footer": {
+    "main_title": "Natural History Museum",
+    "main_address": "Njegoševa 51, 11000 Belgrade",
+    "main_phone": "+381 11 344 21 49",
+    "main_phoneRaw": "+381113442149",
+    "main_email": "nhmbeo@nhmbeo.rs",
+    "gallery_title": "Museum Gallery",
+    "gallery_address": "Mali Kalemegdan 5, 11000 Belgrade",
+    "gallery_phone": "+381 11 328 43 17",
+    "gallery_phoneRaw": "+381113284317",
+    "gallery_email": "galerija@nhmbeo.rs",
+    "contactLink": "Contact"
+  },
+  "newsletter": {
+    "title": "Stay informed",
+    "description": "Subscribe to our newsletter for news on exhibitions and events.",
+    "namePlaceholder": "Name",
+    "emailPlaceholder": "Email",
+    "submit": "Subscribe",
+    "submitting": "Sending…",
+    "success": "Thank you! You're subscribed.",
+    "error": "Something went wrong. Please try again."
+  },
+  "documents": {
+    "empty": "No documents to display.",
+    "openPdf": "Open PDF"
+  },
+  "shop": {
+    "count": "{count, plural, one {# product} other {# products}}",
+    "sortBy": "Sort",
+    "sort_default": "Default",
+    "sort_name": "By name",
+    "sort_priceAsc": "Price: low → high",
+    "sort_priceDesc": "Price: high → low",
+    "noImage": "No image"
+  },
+  "news": {
+    "back": "All news",
+    "empty": "No news to display."
+  },
+  "contact": {
+    "main": "Natural History Museum",
+    "gallery": "Gallery",
+    "social": "Social",
+    "addressLabel": "Address",
+    "phoneLabel": "Phone",
+    "emailLabel": "Email"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "_machineTranslated": true,
+  "title": "Animal Marking Centre",
+  "intro": "The national centre for ringing birds and bats — part of the Natural History Museum since 1993. Ringing personalises individual animals so they can be tracked, opening a scientific window onto migrations, dispersal, and the state of nature.",
+  "featured": {
+    "eyebrow": "Explore",
+    "title": "The ringing programme has been running since 1993.",
+    "scope": "Birds · bats",
+    "founded": "Founded 1993 within the Natural History Museum",
+    "membership": "EURING member (1997) · CES (2005)",
+    "resultsHref": "https://nhmbeo.rs/wp-content/uploads/2026/01/Rezultati-prstenovanja-za-2025.pdf",
+    "resultsLabel": "2025 Ringing results (PDF)"
+  },
+  "stats": [
+    {
+      "value": "300,000+",
+      "label": "birds ringed"
+    },
+    {
+      "value": "10,000+",
+      "label": "bats marked"
+    },
+    {
+      "value": "1908",
+      "label": "first ringing on Serbian territory"
+    },
+    {
+      "value": "1997",
+      "label": "joined EURING"
+    }
+  ],
+  "body": "The Animal Marking Centre organises the monitoring and study of animal movements at local, regional, continental, and intercontinental scales. Mostly birds are ringed, and to a lesser extent bats. Various markers are used — aluminium and plastic rings or wing tags. By ringing, animals are personalised, given an individual identity, and can be tracked. Information on their movements provides direct scientific insight into the once-puzzling phenomena of migration, dispersal in space, and habitat use. It also yields indirect data on the spread of certain infectious diseases, on population genetics, and on changes in the environment.\n\nFor the first time worldwide, birds were scientifically and systematically ringed in 1903; the earliest ringing on the territory of today's Serbia followed only five years later, on 28 June 1908. The first bat ringing was carried out in 1954.\n\n## From Zagreb to Belgrade\n\nThe national Animal Marking Centre was founded in 1993 within the Natural History Museum in Belgrade. Until then, the Yugoslav centre had been in Zagreb. Since 1997 the Centre has been a member of the European Union for Bird Ringing — EURING, and since 2005 has participated in the European CES (Constant Effort Sites) project. Since its founding, the Centre's rings have marked more than 300,000 birds and around 10,000 bats.\n\n## Collaborators and access\n\nIn addition to the Museum's curators, a large number of external collaborators take part — professional biologists, amateurs, and nature enthusiasts. The Centre supplies rings, schedules accreditation exams for collaborators, and issues marking permits.\n\nIf you find a bird or bat with a ring, please contact the national Animal Marking Centre at the Natural History Museum.",
+  "species": [
+    {
+      "latin": "Buteo buteo",
+      "common": "Common buzzard",
+      "photographer": "Milivoj Vučanović",
+      "image": "https://nhmbeo.rs/wp-content/uploads/2021/04/Buteo-buteo-photo-Milivoj-Vucanovic.jpg"
+    },
+    {
+      "latin": "Coracias garrulus",
+      "common": "European roller",
+      "photographer": "Dirk Heinrich",
+      "image": "https://nhmbeo.rs/wp-content/uploads/2021/04/Coracias-garrulus-photo-Dirk-Heinrich.jpg"
+    },
+    {
+      "latin": "Myotis daubentonii",
+      "common": "Daubenton's bat",
+      "photographer": "Milan Paunović",
+      "image": "https://nhmbeo.rs/wp-content/uploads/2021/04/Vodeni-vecernjak-Myotis-daubentonii-photo-Milan-Paunovic-scaled-1.jpg"
+    }
+  ],
+  "contact": {
+    "label": "Report a sighting",
+    "description": "If you find a bird or bat with a ring, please let us know.",
+    "phone": "+381 11 344 21 47",
+    "email": "nhmbeo@nhmbeo.rs"
+  }
+}

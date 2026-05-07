@@ -1,0 +1,136 @@
+{
+  "title": "Bulletin of the Natural History Museum",
+  "intro": "Међународни научни часопис Природњачког музеја у Београду — наследник Гласника, излази од 2008. године на енглеском језику.",
+  "body": "Bulletin of the Natural History Museum објављује оригиналне научне радове из области биологије, геологије и сродних дисциплина. Наставља традицију Гласника Природњачког музеја, који је излазио у три серије од 1948. до 1998. године.\n\nЗа упутства ауторима, прихватање рукописа и преузимање претходних бројева, обратите се уредништву на nhmbeo@nhmbeo.rs.",
+  "issues": [
+    {
+      "year": "2026",
+      "image": "https://nhmbeo.rs/wp-content/uploads/2026/03/Korice-WEB.jpg",
+      "volume": 19
+    },
+    {
+      "year": "2025",
+      "image": "https://nhmbeo.rs/wp-content/uploads/2025/03/Korice-2.jpg",
+      "volume": 18
+    },
+    {
+      "year": "2024",
+      "image": "https://nhmbeo.rs/wp-content/uploads/2024/03/Korice-1b.jpg",
+      "volume": 17
+    },
+    {
+      "year": "2023",
+      "image": "https://nhmbeo.rs/wp-content/uploads/2023/04/Korice-1-1.jpg",
+      "volume": 16
+    },
+    {
+      "year": "2022",
+      "image": "https://nhmbeo.rs/wp-content/uploads/2022/05/Korice-2.jpg",
+      "volume": 15
+    },
+    {
+      "year": "2021",
+      "image": "https://nhmbeo.rs/wp-content/uploads/2021/04/Korice-1-scaled-1.jpg",
+      "volume": 14
+    },
+    {
+      "year": "2019",
+      "image": "https://nhmbeo.rs/wp-content/uploads/2021/04/Korice-2019.jpg",
+      "volume": 12
+    },
+    {
+      "year": "2018",
+      "image": "https://nhmbeo.rs/wp-content/uploads/2021/04/Korice-2018.jpg",
+      "volume": 11
+    },
+    {
+      "year": "2017",
+      "image": "https://nhmbeo.rs/wp-content/uploads/2021/04/Korice-2017.jpg",
+      "volume": 10
+    },
+    {
+      "year": "2016",
+      "image": "https://nhmbeo.rs/wp-content/uploads/2021/04/Korice-2016.jpg",
+      "volume": 9
+    },
+    {
+      "year": "2015",
+      "image": "https://nhmbeo.rs/wp-content/uploads/2021/04/Korice-2015.jpg",
+      "volume": 8
+    },
+    {
+      "year": "2014",
+      "image": "https://nhmbeo.rs/wp-content/uploads/2021/04/Korice-2014.jpg",
+      "volume": 7
+    },
+    {
+      "year": "2013",
+      "image": "https://nhmbeo.rs/wp-content/uploads/2021/04/Korice-2013.jpg",
+      "volume": 6
+    },
+    {
+      "year": "2012",
+      "image": "https://nhmbeo.rs/wp-content/uploads/2021/04/Korice-2012.jpg",
+      "volume": 5
+    },
+    {
+      "year": "2011",
+      "image": "https://nhmbeo.rs/wp-content/uploads/2021/04/Korice-2011.jpg",
+      "volume": 4
+    },
+    {
+      "year": "2010",
+      "image": "https://nhmbeo.rs/wp-content/uploads/2021/04/Korice-2010.jpg",
+      "volume": 3
+    },
+    {
+      "year": "2009",
+      "image": "https://nhmbeo.rs/wp-content/uploads/2021/04/Korice-2009.jpg",
+      "volume": 2
+    },
+    {
+      "year": "2008",
+      "image": "https://nhmbeo.rs/wp-content/uploads/2021/04/Korice-2008.jpg",
+      "volume": 1
+    }
+  ],
+  "issn": "2406-1360",
+  "editorialBoard": {
+    "publisher": {
+      "label": "За издавача",
+      "name": "Славко Спасић"
+    },
+    "editorInChief": {
+      "label": "Главни и одговорни уредник",
+      "name": "Марјан Никетић"
+    },
+    "sectionEditors": [
+      {
+        "name": "Александра Маран Стевановић",
+        "subject": "Геологија"
+      }
+    ],
+    "members": [
+      "Alexandru Andrasanu (Bucharest)",
+      "Ана Ивановић (Београд)",
+      "Boris Kryštufek (Koper)",
+      "George Koufos (Thessaloniki)",
+      "Горан Аначков (Нови Сад)",
+      "Gordan Karaman (Podgorica)",
+      "Иван Дулић (Нови Сад)",
+      "Кристина Шарић (Београд)",
+      "Љиљана Протић (Београд)",
+      "Срећко Ћурчић (Београд)",
+      "Виолета Гајић (Београд)",
+      "Воислав Васић (Београд)",
+      "Зоран Марковић (Београд)",
+      "Жељко Томановић (Београд)"
+    ],
+    "journalManager": {
+      "label": "Секретар редакције",
+      "name": "Оливера Аломеровић"
+    },
+    "membersLabel": "Редакциони одбор",
+    "editorsLabel": "Уредници"
+  }
+}

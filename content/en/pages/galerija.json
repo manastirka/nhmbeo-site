@@ -1,0 +1,43 @@
+{
+  "_machineTranslated": true,
+  "title": "Gallery of the Natural History Museum",
+  "intro": "The Natural History Museum's exhibition venue on Mali Kalemegdan — a 19th-century historic building, refurbished in 1994.",
+  "featured": {
+    "eyebrow": "Visit us",
+    "title": "On Kalemegdan since 1994.",
+    "address": "Mali Kalemegdan 5, 11000 Belgrade",
+    "phone": "+381 11 328 43 17",
+    "email": "galerija@nhmbeo.rs",
+    "ctaHref": "/posetite-nas/ulaznice",
+    "ctaLabel": "Buy tickets"
+  },
+  "stats": [
+    { "value": "10am–9pm", "label": "Tuesday–Sunday · May–October" },
+    { "value": "10am–6pm", "label": "Tuesday–Sunday · November–April" },
+    { "value": "Thu 10–12", "label": "free admission" },
+    { "value": "Monday", "label": "closed" }
+  ],
+  "body": "The Natural History Museum stages its exhibitions in the Gallery on Mali Kalemegdan. Although small in space and not suited to a permanent, complex natural-history display, it hosts attractive exhibitions that present subjects from the history of nature in an engaging way.\n\n## From a guardhouse to a gallery\n\nThe Gallery building has a rich history. It is first mentioned on an Ottoman plan from the mid-19th century as a *Karaula* — a guardhouse that watched over the main approach to the fortress from the direction of Stambol Gate. Its architecture reflects the transition from Balkan–Ottoman to European building styles.\n\nFrom 1957 to 1973, the building housed the Museum of Forestry and Hunting, which was later merged into the Natural History Museum. The display consisted mainly of the hunting trophies of Elim Demidoff, Count of San Donato — a relative of Prince Pavle Karađorđević — and a small exhibition titled \"Our Forests\".\n\nA shortage of space in the Museum's buildings on Vračar prompted the move of the Museum's exhibition activity to Kalemegdan in 1993. After the building's refurbishment (1992–1994), the Gallery was officially opened on 19 December 1994 with the exhibition *From the Treasures of the Natural History Museum* — heralding the centenary of the Museum's founding.\n\n## What happens in the Gallery\n\nAround 60 natural-history exhibitions have been held here to date. Beyond exhibitions, the Gallery hosts lectures, book launches, creative workshops, panel discussions and seminars.\n\nIt also takes part in international observances and key dates: Museums for 10, European Heritage Days, Biodiversity Day, Earth Day, Ramsar Convention Day, International Bat Night, and the International Day of Persons with Disabilities.\n\n## Nature Bazaar and the Green Salon\n\nWithin the Gallery is the **Nature Bazaar**, a shop offering souvenirs made from natural materials or with natural-history motifs.\n\nThe **Green Salon** is a small exhibition space within the Gallery, devoted to companion content for the main shows or to independent mini-exhibitions.\n\nOne of the entrances to the Gallery is adapted for visitors with special needs.",
+  "facts": [
+    { "label": "Address", "value": "Mali Kalemegdan 5, Belgrade" },
+    { "label": "First purpose", "value": "Ottoman guardhouse, mid-19th c." },
+    { "label": "Second life", "value": "Museum of Forestry & Hunting, 1957–1973" },
+    { "label": "Refurbished", "value": "1992 — 1994" },
+    { "label": "Opened as Gallery", "value": "19 December 1994" },
+    { "label": "Exhibitions held", "value": "around 60" }
+  ],
+  "groupBookings": {
+    "label": "Group visits",
+    "description": "Book guided tours and group visits by phone or email.",
+    "phone": "+381 11 328 43 17",
+    "email": "galerija@nhmbeo.rs"
+  },
+  "images": [
+    "https://nhmbeo.rs/wp-content/uploads/2025/10/d56eaa8d-1612-48a6-9152-a3195d19f66a.jpg",
+    "https://nhmbeo.rs/wp-content/uploads/2025/10/46984ff0-44ac-4395-80d3-c1e716c1b2ab.jpg",
+    "https://nhmbeo.rs/wp-content/uploads/2025/10/b4671623-ca05-4a98-9ff6-1d9b3881aa1c.jpg",
+    "https://nhmbeo.rs/wp-content/uploads/2025/10/bdc72523-a664-4d07-9fb2-536663506f72.jpg",
+    "https://nhmbeo.rs/wp-content/uploads/2025/10/a17cdade-c3c0-444d-959f-abcba73c20df.jpg",
+    "https://nhmbeo.rs/wp-content/uploads/2025/10/bb43c498-4da1-4a94-bdc2-585f8ad1fd7a.jpg"
+  ]
+}

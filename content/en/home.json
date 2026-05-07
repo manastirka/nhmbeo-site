@@ -1,0 +1,65 @@
+{
+  "_machineTranslated": true,
+  "hero": {
+    "eyebrow": "Natural History Museum, Belgrade",
+    "title": "The story of life on Earth, gathered under one roof.",
+    "subtitle": "Over two million specimens — from fossils 4.5 billion years old to the contemporary flora and fauna of Serbia.",
+    "image": "https://nhmbeo.rs/wp-content/uploads/2026/03/655223022_18385450078094058_269805532308419901_n.jpg"
+  },
+  "tiles": {
+    "title": "Plan your visit",
+    "items": [
+      {
+        "title": "Hours & location",
+        "description": "Tuesday–Sunday, 10am–9pm",
+        "href": "/posetite-nas/galerija"
+      },
+      {
+        "title": "Tickets",
+        "description": "From 300 RSD · Free Thursday mornings",
+        "href": "/posetite-nas/ulaznice"
+      },
+      {
+        "title": "On view now",
+        "description": "Lords of the Depths — Sharks and Rays of the Adriatic",
+        "href": "/posetite-nas/izlozba-u-galeriji"
+      },
+      {
+        "title": "Shop",
+        "description": "Catalogues, guides, and museum gifts",
+        "href": "/posetite-nas/prodavnica"
+      }
+    ]
+  },
+  "intro": {
+    "eyebrow": "About the museum",
+    "title": "Telling Serbia's natural story since 1895.",
+    "body": "The Natural History Museum in Belgrade is an institution of national importance and the only museum of its kind in Serbia. Its collections hold more than two million specimens — from holotypes and fossils 4.5 billion years old to the contemporary flora and fauna of Serbia. The museum doesn't just present natural heritage; it actively studies and protects it."
+  },
+  "stats": [
+    {
+      "value": "2,000,000+",
+      "label": "specimens"
+    },
+    {
+      "value": "1895",
+      "label": "founded"
+    },
+    {
+      "value": "60+",
+      "label": "exhibitions held"
+    },
+    {
+      "value": "300,000+",
+      "label": "birds ringed"
+    }
+  ],
+  "featured": {
+    "eyebrow": "Featured",
+    "title": "Lords of the Depths — Sharks and Rays of the Adriatic",
+    "description": "Dermoplastic specimens, models, and educational content on some of the planet’s oldest predators — co-produced with the Natural History Museum of Montenegro.",
+    "href": "/posetite-nas/izlozba-u-galeriji",
+    "image": "https://nhmbeo.rs/wp-content/uploads/2026/03/656138434_18385449991094058_3913209771801890699_n.jpg",
+    "cta": "Exhibition details"
+  }
+}
