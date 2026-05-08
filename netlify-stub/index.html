@@ -7,18 +7,20 @@
   </head>
   <body>
     <script>
-      // This subdomain (nhmbeo-site.netlify.app) only exists to host
-      // Netlify Identity. Any visitor — including someone clicking a
-      // Netlify Identity invite link — is forwarded to the canonical
-      // domain. URL fragment (#invite_token=…, #recovery_token=…) is
-      // preserved so the Identity widget at /admin/ can pick it up.
+      // This subdomain (nhmbeo-site.netlify.app) hosts the CMS at /admin/
+      // and the Netlify Identity service. Visitors who land here:
+      //   • with an Identity URL fragment (#invite_token, #recovery_token,
+      //     #confirmation_token, #email_change_token) → forward to /admin/
+      //     SAME ORIGIN so the widget can read the token without cross-
+      //     origin issues
+      //   • everyone else → bounce to the public site on Hostinger.
       (function () {
         var hash = window.location.hash || '';
-        var dest =
-          /^#(invite_token|recovery_token|confirmation_token|email_change_token)=/.test(hash)
-            ? 'https://nhmbeo.aleksandarlukovic.com/admin/' + hash
-            : 'https://nhmbeo.aleksandarlukovic.com/';
-        window.location.replace(dest);
+        if (/^#(invite_token|recovery_token|confirmation_token|email_change_token)=/.test(hash)) {
+          window.location.replace('/admin/' + hash);
+        } else {
+          window.location.replace('https://nhmbeo.aleksandarlukovic.com/');
+        }
       })();
     </script>
     <p>
