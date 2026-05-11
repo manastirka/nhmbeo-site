@@ -11,6 +11,7 @@
     "translate": "node scripts/translate-content.mjs"
   },
   "dependencies": {
+    "marked": "^18.0.3",
     "next": "15.0.4",
     "next-intl": "3.26.0",
     "react": "19.0.0",
