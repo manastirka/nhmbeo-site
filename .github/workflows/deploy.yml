@@ -81,6 +81,13 @@ jobs:
             ExpiresByType text/css   "access plus 7 days"
             ExpiresByType application/javascript "access plus 7 days"
           </IfModule>
+          # HTML always revalidates — visitors see new content right after
+          # a CMS publish + CI redeploy, no manual hard-refresh needed.
+          <IfModule mod_headers.c>
+            <FilesMatch "\.html?$">
+              Header set Cache-Control "no-cache, must-revalidate, max-age=0"
+            </FilesMatch>
+          </IfModule>
           HT
           cat > out/index.html <<'IDX'
           <!doctype html>
