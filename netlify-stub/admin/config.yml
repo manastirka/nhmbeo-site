@@ -3,15 +3,14 @@
 #   1. Editor saves a change → CMS commits to GitHub (main branch).
 #   2. GitHub Actions builds the site and FTP-uploads to Hostinger.
 #
-# Backend = Git Gateway (Netlify Identity) — staff log in with email,
-# never need a GitHub account.
+# Backend = Git Gateway via Netlify Identity. Editors sign in with email
+# (or GitHub external provider) — they don't need GitHub accounts. Identity
+# acts as a service account that commits to manastirka/nhmbeo-site on
+# their behalf, so we avoid the GitHub OAuth-proxy token-scope problem.
 
 backend:
   name: git-gateway
   branch: main
-  # Same origin (nhmbeo-site.netlify.app) hosts both this CMS and the
-  # Identity / Git Gateway endpoints, so we don't need identity_url
-  # or gateway_url overrides.
 
 publish_mode: editorial_workflow
 
