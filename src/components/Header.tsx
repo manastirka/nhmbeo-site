@@ -5,7 +5,7 @@ import NavMenu from './NavMenu';
 import MobileMenu from './MobileMenu';
 import LanguageSwitcher from './LanguageSwitcher';
 
-const LOGO_URL = 'https://nhmbeo.rs/wp-content/uploads/2021/04/ezgif.com-gif-maker.gif';
+const LOGO_URL = '/uploads/wp-content-uploads-2021-04-ezgif.com-gif-maker.gif';
 
 export default async function Header() {
   const t = await getTranslations('site');

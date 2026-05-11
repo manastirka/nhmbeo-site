@@ -14,28 +14,28 @@
       "title": "Центар за маркирање животиња",
       "description": "Национални центар за прстеновање птица и слепих мишева. Основан 1993, члан EURING-а од 1997. Преко 300.000 обележених птица.",
       "href": "/istrazite/centar-za-markiranje-zivotinja",
-      "image": "https://nhmbeo.rs/wp-content/uploads/2021/04/Buteo-buteo-photo-Milivoj-Vucanovic.jpg"
+      "image": "/uploads/wp-content-uploads-2021-04-Buteo-buteo-photo-Milivoj-Vucanovic.jpg"
     },
     {
       "key": "bulletin",
       "title": "Bulletin of the Natural History Museum",
       "description": "Међународни научни часопис Музеја. Излази од 2008. на енглеском језику. ISSN 2406-1360 · 18 бројева у архиви.",
       "href": "/istrazite/bulletin",
-      "image": "https://nhmbeo.rs/wp-content/uploads/2026/03/Korice-WEB.jpg"
+      "image": "/uploads/wp-content-uploads-2026-03-Korice-WEB.jpg"
     },
     {
       "key": "glasnik",
       "title": "Гласник Природњачког музеја",
       "description": "Историјски научни часопис (1948 — 1998). Три серије: А — геолошке науке, Б — биолошке науке, Ц — шумарство и лов.",
       "href": "/istrazite/glasnik",
-      "image": "https://nhmbeo.rs/wp-content/uploads/2021/04/galerijanhmbeo.jpg"
+      "image": "/uploads/wp-content-uploads-2021-04-galerijanhmbeo.jpg"
     },
     {
       "key": "special",
       "title": "Посебна издања",
       "description": "Двадесет две монографске свеске посебних издања Музеја из периода 1903 — 1941. Орнитологија, ентомологија, флора, палеонтологија.",
       "href": "/istrazite/posebna-izdanja",
-      "image": "https://nhmbeo.rs/wp-content/uploads/2025/09/Kolaz-2.png"
+      "image": "/uploads/wp-content-uploads-2025-09-Kolaz-2.png"
     }
   ]
 }

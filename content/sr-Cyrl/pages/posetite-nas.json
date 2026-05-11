@@ -34,28 +34,28 @@
       "title": "Галерија Природњачког музеја",
       "description": "Изложбени простор на Малом Калемегдану — историјска зграда из 19. века, обновљена 1994.",
       "href": "/posetite-nas/galerija",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/2/28/KalemegdanGalery.JPG"
+      "image": "/uploads/wm-wikipedia-commons-2-28-KalemegdanGalery.JPG"
     },
     {
       "key": "izlozba",
       "title": "Тренутна изложба",
       "description": "Господари дубина — ајкуле и раже Јадранског мора. Изложба у сарадњи са Природњачким музејом Црне Горе, отворена до јуна 2026.",
       "href": "/posetite-nas/izlozba-u-galeriji",
-      "image": "https://nhmbeo.rs/wp-content/uploads/2026/03/655190076_18385450090094058_7451136653472061076_n.jpg"
+      "image": "/uploads/wp-content-uploads-2026-03-655190076_18385450090094058_7451136653472061076_n.jpg"
     },
     {
       "key": "ulaznice",
       "title": "Цене улазница",
       "description": "Појединачне, породичне и стручна вођења. Четвртком слободан улаз 10–12h.",
       "href": "/posetite-nas/ulaznice",
-      "image": "https://nhmbeo.rs/wp-content/uploads/2025/09/Kolaz-1.jpg"
+      "image": "/uploads/wp-content-uploads-2025-09-Kolaz-1.jpg"
     },
     {
       "key": "prodavnica",
       "title": "Продавница",
       "description": "Каталози, водичи, монографије и сувенири из збирки музеја.",
       "href": "/posetite-nas/prodavnica",
-      "image": "https://nhmbeo.rs/wp-content/uploads/2025/09/Prednja-i-zadnja-strana-14.jpg"
+      "image": "/uploads/wp-content-uploads-2025-09-Prednja-i-zadnja-strana-14.jpg"
     }
   ]
 }
