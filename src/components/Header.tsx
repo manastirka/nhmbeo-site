@@ -13,13 +13,13 @@ export default async function Header() {
   const tNav = await getTranslations('nav');
 
   return (
-    <header className="sticky top-0 z-40 border-b border-brand-line/60 bg-white/95 backdrop-blur-md">
+    <header className="sticky top-0 z-40 border-b border-brand-line/70 bg-white/90 backdrop-blur-md">
       <HoursBar />
-      <div className="container-wide flex items-center justify-between gap-3 py-3">
+      <div className="container-wide flex items-center justify-between gap-3 py-2.5">
         <Link
           href="/"
           aria-label={t('longName')}
-          className="flex shrink-0 items-center gap-3 no-underline"
+          className="flex min-w-0 shrink items-center gap-3 no-underline"
         >
           <Image
             src={LOGO_URL}
@@ -28,26 +28,22 @@ export default async function Header() {
             height={416}
             unoptimized
             priority
-            className="h-[52px] w-auto md:h-14"
-            style={{
-              filter: 'contrast(1.25) saturate(1.2) brightness(0.7)',
-            }}
+            className="h-11 w-auto md:h-12"
           />
-          <span className="hidden items-baseline gap-3 leading-none sm:flex">
-            <span className="font-display text-sm font-bold text-brand-deep tracking-tight whitespace-nowrap">
+          <span className="hidden min-w-0 flex-col leading-none sm:flex">
+            <span className="font-display text-[13px] font-bold tracking-tight text-brand-deep md:text-sm">
               {t('shortName')}
             </span>
-            <span className="hidden h-3 w-px bg-brand-line xl:inline-block" />
-            <span className="hidden text-[10px] uppercase tracking-widerx text-brand-purple whitespace-nowrap xl:inline">
+            <span className="mt-1 hidden text-[10px] uppercase tracking-widerx text-brand-purple xl:inline">
               {t('tagline')}
             </span>
           </span>
         </Link>
-        <div className="flex shrink-0 items-center gap-2 md:gap-3">
+        <div className="flex shrink-0 items-center gap-1.5 md:gap-2.5">
           <NavMenu />
           <Link
             href="/posetite-nas/ulaznice"
-            className="hidden items-center gap-2 rounded-full bg-brand-lime px-4 py-2 text-xs font-semibold uppercase tracking-widerx text-brand-midnight transition-colors hover:bg-brand-cyan md:inline-flex no-underline whitespace-nowrap"
+            className="hidden items-center rounded-full bg-brand-lime px-4 py-2 text-[11px] font-semibold uppercase tracking-widerx text-brand-midnight no-underline transition-colors hover:bg-brand-cyan md:inline-flex"
           >
             {tNav('tickets_short')}
           </Link>

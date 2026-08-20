@@ -50,14 +50,15 @@ export default async function HomePage({
 
       {home?.intro && (
         <section className="bg-white">
-          <div className="container-wide grid gap-12 py-20 md:py-28 lg:grid-cols-12">
+          <div className="container-wide grid gap-12 py-16 md:py-24 lg:grid-cols-12">
             <div className="lg:col-span-5">
               {home.intro.eyebrow && (
                 <p className="eyebrow mb-3">{home.intro.eyebrow}</p>
               )}
-              <h2 className="font-serif text-3xl leading-tight text-brand-deep md:text-5xl">
+              <h2 className="font-display text-3xl font-extrabold leading-tight tracking-tight text-brand-deep md:text-5xl">
                 {home.intro.title}
               </h2>
+              <span className="mt-6 block h-[3px] w-14 bg-brand-lime" />
             </div>
             <div className="lg:col-span-6 lg:col-start-7">
               <p className="text-base leading-relaxed text-brand-ink/80 md:text-lg">
@@ -95,17 +96,17 @@ export default async function HomePage({
 
       {featured.length > 0 && (
         <section className="bg-brand-paper">
-          <div className="container-wide py-20">
-            <div className="mb-12 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+          <div className="container-wide py-16 md:py-24">
+            <div className="mb-10 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
               <div>
                 <p className="eyebrow mb-2">02</p>
-                <h2 className="font-serif text-3xl text-brand-deep md:text-4xl">
+                <h2 className="font-display text-3xl font-extrabold tracking-tight text-brand-deep md:text-4xl">
                   {tNav('news')}
                 </h2>
               </div>
               <Link
                 href="/vesti"
-                className="self-start text-sm text-brand-deep hover:text-brand-accent"
+                className="self-start text-sm font-semibold text-brand-deep hover:text-brand-purple"
               >
                 {t('ctaNews')} <span aria-hidden="true">→</span>
               </Link>

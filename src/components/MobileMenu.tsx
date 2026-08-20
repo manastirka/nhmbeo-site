@@ -49,7 +49,7 @@ export default function MobileMenu() {
               onClick={() => setOpen(false)}
               className="absolute inset-0 bg-brand-midnight/60 backdrop-blur-sm"
             />
-            <div className="absolute inset-y-0 right-0 flex w-[88vw] max-w-sm flex-col overflow-y-auto bg-white shadow-2xl animate-[slideInRight_220ms_ease-out]">
+            <div className="absolute inset-y-0 right-0 flex w-[88vw] max-w-sm flex-col overflow-y-auto bg-white animate-[slideInRight_220ms_ease-out]">
               <div className="flex items-center justify-end p-4">
                 <button
                   type="button"

@@ -10,12 +10,13 @@ export default async function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-brand-deep text-white">
+    <footer className="bg-brand-midnight text-white">
+      <div className="h-[3px] bg-brand-lime" />
       <div className="border-b border-white/10">
-        <div className="container-wide grid gap-12 py-20 md:grid-cols-2 lg:grid-cols-12">
+        <div className="container-wide grid gap-12 py-16 md:grid-cols-2 md:py-20 lg:grid-cols-12">
           <div className="lg:col-span-4">
             <p className="eyebrow mb-4 text-brand-lime">{tSite('tagline')}</p>
-            <h2 className="font-display text-3xl text-white md:text-4xl">
+            <h2 className="font-display text-3xl font-extrabold tracking-tight text-white md:text-4xl">
               {tSite('longName')}
             </h2>
             <div className="mt-8">
@@ -25,7 +26,7 @@ export default async function Footer() {
 
           <div className="lg:col-span-3">
             <p className="eyebrow mb-4 text-brand-lime">{t('main_title')}</p>
-            <address className="not-italic text-sm leading-relaxed text-white/75">
+            <address className="not-italic text-sm leading-relaxed text-white/70">
               {t('main_address')}
               <br />
               <a href={`tel:${t('main_phoneRaw')}`} className="text-white hover:text-brand-lime">
@@ -40,7 +41,7 @@ export default async function Footer() {
 
           <div className="lg:col-span-3">
             <p className="eyebrow mb-4 text-brand-lime">{t('gallery_title')}</p>
-            <address className="not-italic text-sm leading-relaxed text-white/75">
+            <address className="not-italic text-sm leading-relaxed text-white/70">
               {t('gallery_address')}
               <br />
               <a href={`tel:${t('gallery_phoneRaw')}`} className="text-white hover:text-brand-lime">
@@ -60,7 +61,7 @@ export default async function Footer() {
                 <li key={item.key}>
                   <Link
                     href={item.href}
-                    className="text-white/80 hover:text-brand-lime"
+                    className="text-white/75 hover:text-brand-lime"
                   >
                     {tNav(item.key)}
                   </Link>
@@ -71,30 +72,27 @@ export default async function Footer() {
         </div>
       </div>
 
-      <div className="border-b border-white/10">
-        <div className="container-wide flex flex-col items-start justify-between gap-4 py-6 sm:flex-row sm:items-center">
-          <ul className="flex flex-wrap gap-4 text-xs uppercase tracking-widerx text-white/60">
-            {socialLinks.map((s) => (
-              <li key={s.key}>
-                <a
-                  href={s.href}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="text-white/70 hover:text-brand-lime"
-                >
-                  {s.key}
-                </a>
-              </li>
-            ))}
-          </ul>
+      <div className="container-wide flex flex-col gap-6 py-6 md:flex-row md:items-center md:justify-between">
+        <ul className="flex flex-wrap gap-2">
+          {socialLinks.map((s) => (
+            <li key={s.key}>
+              <a
+                href={s.href}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="inline-flex rounded-full border border-white/15 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-widerx text-white/70 no-underline hover:border-brand-lime hover:text-brand-lime"
+              >
+                {s.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+        <div className="flex flex-col gap-1 text-xs text-white/45 md:items-end">
+          <p>© {year} {tSite('longName')}</p>
+          <Link href="/kontakt" className="text-white/70 hover:text-brand-lime">
+            {t('contactLink')}
+          </Link>
         </div>
-      </div>
-
-      <div className="container-wide flex flex-col gap-2 py-6 text-xs text-white/50 md:flex-row md:items-center md:justify-between">
-        <p>© {year} {tSite('longName')}</p>
-        <Link href="/kontakt" className="text-white/70 hover:text-brand-lime">
-          {t('contactLink')}
-        </Link>
       </div>
     </footer>
   );

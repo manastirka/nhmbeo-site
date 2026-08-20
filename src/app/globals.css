@@ -9,6 +9,7 @@
 
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 6.5rem;
   }
 
   body {
@@ -17,9 +18,9 @@
   }
 
   h1, h2, h3, h4 {
-    font-family: var(--font-display), 'Bricolage Grotesque', system-ui, sans-serif;
+    font-family: var(--font-display), system-ui, sans-serif;
     color: theme('colors.brand.ink');
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
     font-weight: 700;
   }
 
@@ -31,6 +32,11 @@
 
   a:hover {
     color: theme('colors.brand.purple');
+  }
+
+  :focus-visible {
+    outline: 2px solid theme('colors.brand.lime');
+    outline-offset: 3px;
   }
 
   ::selection {
@@ -54,19 +60,19 @@
 
   /* Filled lime CTA — NHM London signature look. */
   .btn-primary {
-    @apply inline-flex items-center gap-2 rounded-full bg-brand-lime px-7 py-3.5 text-sm font-semibold text-brand-midnight transition-all hover:bg-brand-cyan;
+    @apply inline-flex items-center gap-2 rounded-full bg-brand-lime px-7 py-3.5 text-sm font-semibold text-brand-midnight transition-colors hover:bg-brand-cyan;
   }
 
   .btn-ghost {
-    @apply inline-flex items-center gap-2 rounded-full border-2 border-white px-7 py-3.5 text-sm font-semibold text-white transition-all hover:bg-white hover:text-brand-deep;
+    @apply inline-flex items-center gap-2 rounded-full border border-white/80 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-white hover:text-brand-deep;
   }
 
   .btn-outline {
-    @apply inline-flex items-center gap-2 rounded-full border-2 border-brand-deep px-7 py-3.5 text-sm font-semibold text-brand-deep transition-all hover:bg-brand-deep hover:text-white;
+    @apply inline-flex items-center gap-2 rounded-full border border-brand-deep px-7 py-3.5 text-sm font-semibold text-brand-deep transition-colors hover:bg-brand-deep hover:text-white;
   }
 
   .btn-peach {
-    @apply inline-flex items-center gap-2 rounded-full bg-brand-peach px-7 py-3.5 text-sm font-semibold text-brand-midnight transition-all hover:bg-brand-lime;
+    @apply inline-flex items-center gap-2 rounded-full bg-brand-peach px-7 py-3.5 text-sm font-semibold text-brand-midnight transition-colors hover:bg-brand-lime;
   }
 
   /* Editorial long-form typography — magazine/museum-publication feel. */

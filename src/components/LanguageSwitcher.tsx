@@ -9,24 +9,22 @@ export default function LanguageSwitcher() {
   const current = useLocale() as Locale;
 
   return (
-    <div className="flex items-center gap-1 text-sm">
-      {locales.map((loc, i) => (
-        <span key={loc} className="flex items-center">
-          {i > 0 && <span className="px-1 text-brand-line">|</span>}
-          <Link
-            href={pathname}
-            locale={loc}
-            hrefLang={loc}
-            aria-current={loc === current ? 'true' : undefined}
-            className={
-              loc === current
-                ? 'font-semibold text-brand-deep no-underline'
-                : 'text-brand-ink/70 no-underline hover:text-brand-deep'
-            }
-          >
-            {localeShort[loc]}
-          </Link>
-        </span>
+    <div className="flex items-center rounded-full border border-brand-line bg-brand-paper p-0.5 text-[11px] font-semibold uppercase tracking-widerx">
+      {locales.map((loc) => (
+        <Link
+          key={loc}
+          href={pathname}
+          locale={loc}
+          hrefLang={loc}
+          aria-current={loc === current ? 'true' : undefined}
+          className={
+            loc === current
+              ? 'rounded-full bg-brand-deep px-2.5 py-1 text-white no-underline'
+              : 'rounded-full px-2.5 py-1 text-brand-ink/60 no-underline hover:text-brand-deep'
+          }
+        >
+          {localeShort[loc]}
+        </Link>
       ))}
     </div>
   );

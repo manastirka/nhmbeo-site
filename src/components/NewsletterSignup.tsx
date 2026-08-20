@@ -49,7 +49,7 @@ export default function NewsletterSignup() {
         <button
           type="submit"
           disabled={state === 'submitting'}
-          className="inline-flex items-center justify-center gap-2 bg-brand-warm px-5 py-2 text-xs font-medium uppercase tracking-widerx text-brand-midnight transition-colors hover:bg-white disabled:opacity-50"
+          className="inline-flex items-center justify-center rounded-full bg-brand-lime px-5 py-2 text-xs font-semibold uppercase tracking-widerx text-brand-midnight transition-colors hover:bg-brand-cyan disabled:opacity-50"
         >
           {state === 'submitting' ? t('submitting') : t('submit')}
         </button>

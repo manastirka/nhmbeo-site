@@ -30,47 +30,38 @@ export default function PageHeader({
           sizes="100vw"
           className={`absolute inset-0 -z-10 object-cover ${objectPositionClass}`}
         />
-        {/* Soft top dimming so the (white) header doesn't fight the image. */}
-        <div className="absolute inset-x-0 top-0 -z-10 h-40 bg-gradient-to-b from-brand-midnight/30 to-transparent" />
-        {/* Strong, readable scrim under the title. */}
-        <div className="absolute inset-x-0 bottom-0 -z-10 h-3/5 bg-gradient-to-t from-brand-midnight via-brand-midnight/85 to-transparent" />
-        <div className="container-wide flex min-h-[44vh] flex-col justify-end py-20 md:min-h-[52vh] md:py-28">
+        <div className="absolute inset-x-0 top-0 -z-10 h-32 bg-gradient-to-b from-brand-midnight/40 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 -z-10 h-3/5 bg-gradient-to-t from-brand-midnight via-brand-midnight/80 to-transparent" />
+        <div className="container-wide flex min-h-[40vh] flex-col justify-end py-16 md:min-h-[48vh] md:py-24">
           {eyebrow && (
-            <p className="eyebrow mb-4 text-brand-warm">
-              {eyebrow}
-            </p>
+            <p className="eyebrow mb-3 text-brand-lime">{eyebrow}</p>
           )}
-          <h1 className="max-w-3xl font-serif text-4xl leading-[1.05] md:text-6xl text-white">
+          <h1 className="max-w-3xl font-display text-4xl font-extrabold leading-[1.05] tracking-tight text-white md:text-6xl">
             {title}
           </h1>
           {intro && (
-            <p className="mt-6 max-w-2xl text-base text-white/90 md:text-lg">
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/85 md:text-lg">
               {intro}
             </p>
           )}
         </div>
+        <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-brand-lime" />
       </section>
     );
   }
 
   return (
-    <section className="relative isolate border-b border-brand-line bg-brand-paper">
-      <div
-        className="absolute inset-0 -z-10 opacity-40"
-        style={{
-          backgroundImage:
-            'radial-gradient(circle at 0% 0%, rgba(212,164,74,0.18) 0%, transparent 50%), radial-gradient(circle at 100% 100%, rgba(46,110,168,0.12) 0%, transparent 50%)',
-        }}
-      />
-      <div className="container-wide py-20 md:py-28">
+    <section className="border-b border-brand-line bg-brand-paper">
+      <div className="container-wide py-16 md:py-24">
         {eyebrow && (
-          <p className="eyebrow mb-4 text-brand-warmDeep">{eyebrow}</p>
+          <p className="eyebrow mb-3">{eyebrow}</p>
         )}
-        <h1 className="font-serif text-4xl leading-tight text-brand-deep md:text-6xl">
+        <h1 className="max-w-4xl font-display text-4xl font-extrabold leading-[1.08] tracking-tight text-brand-deep md:text-6xl">
           {title}
         </h1>
+        <span className="mt-6 block h-[3px] w-14 bg-brand-lime" />
         {intro && (
-          <p className="mt-6 max-w-2xl text-base text-brand-ink/75 md:text-lg">
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-brand-ink/75 md:text-lg">
             {intro}
           </p>
         )}

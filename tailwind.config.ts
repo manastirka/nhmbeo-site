@@ -27,9 +27,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        display: ['var(--font-display)', 'Georgia', 'serif'],
+        display: ['var(--font-display)', 'system-ui', 'sans-serif'],
         sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
-        // Body for long-form prose continues to use the display sans.
         serif: ['var(--font-display)', 'Georgia', 'serif'],
       },
       maxWidth: {

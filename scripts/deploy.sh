@@ -177,7 +177,8 @@ else
   MIRROR_OPTS="$MIRROR_OPTS --delete"
 fi
 
-# Upload via lftp. -u "${FTP_USER},${FTP_PASSWORD}" -p "${FTP_PORT}" "${TARGET}" <<EOF
+# Upload via lftp.
+lftp -u "${FTP_USER},${FTP_PASSWORD}" -p "${FTP_PORT}" "${TARGET}" <<EOF
 set ftp:ssl-allow yes
 set ftp:ssl-protect-data yes
 set ssl:verify-certificate ${VERIFY}

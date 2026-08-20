@@ -16,26 +16,23 @@ export default async function HoursBar() {
   }
 
   return (
-    <div className="border-b border-white/10 bg-brand-deep text-white">
-      <div className="container-wide flex flex-wrap items-center justify-between gap-x-4 gap-y-1 py-1.5 text-[11px] uppercase tracking-widerx">
-        <p className="text-white/85">
+    <div className="bg-brand-midnight text-white">
+      <div className="container-wide flex items-center justify-between gap-3 py-1.5 text-[10px] uppercase tracking-widerx sm:text-[11px]">
+        <p className="min-w-0 truncate text-white/80">
           <span className="text-brand-lime">{t('gallery')}</span>
-          <span className="mx-2 text-white/30" aria-hidden="true">
+          <span className="mx-2 text-white/25" aria-hidden="true">
             ·
           </span>
-          {label}
+          <span>{label}</span>
           {status.freeMorning && (
-            <>
-              <span className="mx-2 text-white/30" aria-hidden="true">
-                ·
-              </span>
-              {t('freeThursday')}
-            </>
+            <span className="ml-2 hidden text-brand-peach sm:inline">
+              · {t('freeThursday')}
+            </span>
           )}
         </p>
         <Link
           href="/posetite-nas/ulaznice"
-          className="font-semibold text-brand-lime hover:text-white no-underline"
+          className="shrink-0 font-semibold text-brand-lime no-underline hover:text-white"
         >
           {t('tickets')}
         </Link>

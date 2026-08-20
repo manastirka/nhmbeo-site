@@ -40,7 +40,7 @@ export const nav: NavItem[] = [
 ];
 
 export const socialLinks = [
-  { key: 'facebook', href: 'https://www.facebook.com/prirodnjacki' },
-  { key: 'instagram', href: 'https://www.instagram.com/prirodnjackimuzej/' },
-  { key: 'youtube', href: 'https://www.youtube.com/channel/UCt-Krr-mGjKyhzHfMblaT_A' },
+  { key: 'facebook', href: 'https://www.facebook.com/prirodnjacki', label: 'Facebook' },
+  { key: 'instagram', href: 'https://www.instagram.com/prirodnjackimuzej/', label: 'Instagram' },
+  { key: 'youtube', href: 'https://www.youtube.com/channel/UCt-Krr-mGjKyhzHfMblaT_A', label: 'YouTube' },
 ];

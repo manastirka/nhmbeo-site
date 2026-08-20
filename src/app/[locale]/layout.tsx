@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { Inter, Bricolage_Grotesque } from 'next/font/google';
+import { Inter, Manrope } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { setRequestLocale, getMessages, getTranslations } from 'next-intl/server';
 import { routing, isLocale } from '@/i18n/routing';
@@ -40,8 +40,8 @@ const sans = Inter({
   variable: '--font-sans',
 });
 
-const display = Bricolage_Grotesque({
-  subsets: ['latin'],
+const display = Manrope({
+  subsets: ['latin', 'cyrillic', 'cyrillic-ext'],
   display: 'swap',
   variable: '--font-display',
   weight: ['400', '500', '600', '700', '800'],

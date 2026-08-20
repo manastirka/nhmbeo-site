@@ -17,9 +17,9 @@ export default function ExhibitionShowcase({
   cta?: string;
 }) {
   return (
-    <section className="bg-brand-deep text-white">
-      <div className="container-wide grid gap-0 md:grid-cols-12 md:gap-12 py-20">
-        <div className="relative col-span-7 aspect-[4/3] overflow-hidden rounded-3xl md:aspect-auto md:min-h-[560px]">
+    <section className="bg-brand-midnight text-white">
+      <div className="container-wide grid items-center gap-10 py-16 md:grid-cols-12 md:gap-14 md:py-24">
+        <div className="relative col-span-7 aspect-[4/3] overflow-hidden md:aspect-auto md:min-h-[520px]">
           {image && (
             <Image
               src={image}
@@ -29,19 +29,19 @@ export default function ExhibitionShowcase({
               className="object-cover"
             />
           )}
+          <span className="absolute left-0 top-0 h-full w-[3px] bg-brand-lime" />
         </div>
-        <div className="col-span-5 mt-8 flex flex-col justify-center md:mt-0">
+        <div className="col-span-5 flex flex-col justify-center">
           {eyebrow && (
             <p className="eyebrow mb-4 text-brand-lime">{eyebrow}</p>
           )}
-          <h2 className="font-display text-4xl leading-[1.05] text-white md:text-6xl">
+          <h2 className="font-display text-3xl font-extrabold leading-[1.05] tracking-tight text-white md:text-5xl">
             {title}
           </h2>
-          <p className="mt-6 max-w-md text-white/80 md:text-lg">{description}</p>
-          <Link
-            href={href}
-            className="btn-primary mt-10 self-start"
-          >
+          <p className="mt-5 max-w-md text-base leading-relaxed text-white/75 md:text-lg">
+            {description}
+          </p>
+          <Link href={href} className="btn-primary mt-8 self-start">
             {cta || 'Read more'}
             <span aria-hidden="true">→</span>
           </Link>
