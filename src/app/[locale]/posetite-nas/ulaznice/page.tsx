@@ -3,7 +3,9 @@ import path from 'node:path';
 import fs from 'node:fs/promises';
 import ContentPage from '@/components/ContentPage';
 import { heroFor } from '@/lib/page-heroes';
+import { generatePageMetadata } from '@/lib/page-helpers';
 import type { Locale } from '@/i18n/config';
+import type { Metadata } from 'next';
 
 type Tickets = {
   title: string;
@@ -19,6 +21,19 @@ async function loadTickets(locale: Locale): Promise<Tickets | null> {
   } catch {
     return null;
   }
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>;
+}): Promise<Metadata> {
+  return generatePageMetadata({
+    params,
+    slug: 'ulaznice',
+    pathname: '/posetite-nas/ulaznice',
+    fallbackTitle: 'Улазнице',
+  });
 }
 
 export default async function Page({

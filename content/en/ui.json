@@ -2,7 +2,8 @@
   "site": {
     "shortName": "Natural History Museum",
     "longName": "Natural History Museum in Belgrade",
-    "tagline": "founded 1895"
+    "tagline": "founded 1895",
+    "skip": "Skip to content"
   },
   "nav": {
     "home": "Home",
@@ -83,5 +84,13 @@
     "addressLabel": "Address",
     "phoneLabel": "Phone",
     "emailLabel": "Email"
+  },
+  "hours": {
+    "gallery": "Gallery",
+    "closedToday": "Closed today (Monday)",
+    "openNow": "Open today {range}",
+    "opens": "Today {range}",
+    "freeThursday": "free entry Thursday 10–12",
+    "tickets": "Tickets"
   }
 }

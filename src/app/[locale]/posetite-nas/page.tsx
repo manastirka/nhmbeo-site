@@ -5,7 +5,9 @@ import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import PageHeader from '@/components/PageHeader';
 import { heroFor } from '@/lib/page-heroes';
+import { generatePageMetadata } from '@/lib/page-helpers';
 import type { Locale } from '@/i18n/config';
+import type { Metadata } from 'next';
 
 type Featured = {
   eyebrow: string;
@@ -42,6 +44,19 @@ async function loadVisit(locale: Locale): Promise<VisitPage | null> {
   } catch {
     return null;
   }
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>;
+}): Promise<Metadata> {
+  return generatePageMetadata({
+    params,
+    slug: 'posetite-nas',
+    pathname: '/posetite-nas',
+    fallbackTitle: 'Посетите нас',
+  });
 }
 
 const STAT_BG = ['bg-brand-peach', 'bg-brand-cyan', 'bg-brand-lime', 'bg-brand-purple'];

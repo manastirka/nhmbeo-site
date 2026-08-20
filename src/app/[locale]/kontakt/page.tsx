@@ -3,12 +3,27 @@ import { setRequestLocale, getTranslations } from 'next-intl/server';
 import PageHeader from '@/components/PageHeader';
 import { socialLinks } from '@/lib/nav';
 import { loadPage } from '@/lib/content';
+import { generatePageMetadata } from '@/lib/page-helpers';
 import type { Locale } from '@/i18n/config';
+import type { Metadata } from 'next';
 
 const MAP_MAIN =
   'https://www.google.com/maps?q=Njego%C5%A1eva+51,+Belgrade&output=embed';
 const MAP_GALLERY =
   'https://www.google.com/maps?q=Mali+Kalemegdan+5,+Belgrade&output=embed';
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>;
+}): Promise<Metadata> {
+  return generatePageMetadata({
+    params,
+    slug: 'kontakt',
+    pathname: '/kontakt',
+    fallbackTitle: 'Контакт',
+  });
+}
 
 export default async function ContactPage({
   params,

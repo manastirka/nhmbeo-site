@@ -3,10 +3,14 @@
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 
+const ENDPOINT =
+  process.env.NEXT_PUBLIC_NEWSLETTER_ENDPOINT || '/api/newsletter';
+
 export default function NewsletterSignup() {
   const t = useTranslations('newsletter');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [company, setCompany] = useState('');
   const [state, setState] = useState<'idle' | 'submitting' | 'ok' | 'error'>('idle');
 
   async function onSubmit(e: React.FormEvent) {
@@ -14,10 +18,10 @@ export default function NewsletterSignup() {
     if (!email) return;
     setState('submitting');
     try {
-      const res = await fetch('/api/newsletter', {
+      const res = await fetch(ENDPOINT, {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ name, email }),
+        body: JSON.stringify({ name, email, company }),
       });
       setState(res.ok ? 'ok' : 'error');
       if (res.ok) {
@@ -36,6 +40,7 @@ export default function NewsletterSignup() {
         <input
           type="email"
           required
+          autoComplete="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder={t('emailPlaceholder')}
@@ -51,11 +56,24 @@ export default function NewsletterSignup() {
       </div>
       <input
         type="text"
+        autoComplete="name"
         value={name}
         onChange={(e) => setName(e.target.value)}
         placeholder={t('namePlaceholder')}
         className="w-full border-b border-white/15 bg-transparent px-1 py-2 text-sm text-white placeholder-white/40 focus:border-brand-warm focus:outline-none"
       />
+      <div aria-hidden="true" className="absolute -left-[9999px] h-0 w-0 overflow-hidden">
+        <label>
+          Company
+          <input
+            type="text"
+            tabIndex={-1}
+            autoComplete="off"
+            value={company}
+            onChange={(e) => setCompany(e.target.value)}
+          />
+        </label>
+      </div>
       {state === 'ok' && (
         <p className="text-xs text-brand-warm">{t('success')}</p>
       )}

@@ -2,11 +2,22 @@ import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import { loadHome } from '@/lib/content';
 import { getFeaturedNews } from '@/lib/news';
+import { homeMetadata } from '@/lib/seo';
 import HeroSection from '@/components/HeroSection';
 import PlanYourVisitTiles from '@/components/PlanYourVisitTiles';
 import ExhibitionShowcase from '@/components/ExhibitionShowcase';
 import NewsCard from '@/components/NewsCard';
 import type { Locale } from '@/i18n/config';
+import type { Metadata } from 'next';
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return homeMetadata(locale);
+}
 
 export default async function HomePage({
   params,

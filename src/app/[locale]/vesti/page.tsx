@@ -3,7 +3,24 @@ import PageHeader from '@/components/PageHeader';
 import NewsCard from '@/components/NewsCard';
 import { listNews } from '@/lib/news';
 import { heroFor } from '@/lib/page-heroes';
+import { pageMetadata } from '@/lib/seo';
 import type { Locale } from '@/i18n/config';
+import type { Metadata } from 'next';
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations('nav');
+  return pageMetadata({
+    locale,
+    pathname: '/vesti',
+    title: t('news'),
+    image: heroFor('vesti'),
+  });
+}
 
 export default async function NewsListPage({
   params,

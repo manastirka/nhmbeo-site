@@ -66,7 +66,24 @@ if [[ -z "${FTP_PASSWORD:-}" ]]; then
   echo
 fi
 
-cyan "→ NHM site deploy → ftp://${FTP_USER}@${FTP_HOST}:${FTP_PORT}/${FTP_REMOTE_PATH}"
+# Hostinger supports FTPS on the standard port. Verify the certificate when
+# FTP_HOST is a hostname; a raw IP cannot match Hostinger's cert.
+PROTOCOL="${DEPLOY_PROTOCOL:-ftp}"
+if [[ "$PROTOCOL" == "sftp" ]]; then
+  FTP_PORT="${SFTP_PORT:-65002}"
+  TARGET="sftp://${FTP_HOST}"
+  VERIFY="yes"
+  cyan "→ NHM site deploy → sftp://${FTP_USER}@${FTP_HOST}:${FTP_PORT}/${FTP_REMOTE_PATH}"
+else
+  TARGET="${FTP_HOST}"
+  if [[ "$FTP_HOST" =~ ^[0-9.]+$ ]]; then
+    VERIFY="no"
+    yellow "⚠ FTP_HOST is an IP — TLS certificate will not be verified. Set the hostname and DEPLOY_PROTOCOL=sftp."
+  else
+    VERIFY="yes"
+  fi
+  cyan "→ NHM site deploy → ftp://${FTP_USER}@${FTP_HOST}:${FTP_PORT}/${FTP_REMOTE_PATH}"
+fi
 
 # --- 1. Static export build ---
 if [[ -z "$SKIP_BUILD" ]]; then
@@ -83,7 +100,7 @@ if [[ -z "$SKIP_BUILD" ]]; then
   fi
 
   rm -rf .next out
-  NEXT_OUTPUT=export npm run build
+  NEXT_OUTPUT=export NEXT_PUBLIC_NEWSLETTER_ENDPOINT="${NEXT_PUBLIC_NEWSLETTER_ENDPOINT:-/newsletter.php}" npm run build
 
   if [[ -n "$API_BACKUP" ]]; then
     mv "$API_BACKUP" "$API_DIR"
@@ -148,7 +165,7 @@ else
 fi
 
 # --- 3. Upload via lftp (FTP, with TLS if the server offers it) ---
-cyan "→ Uploading via FTP (lftp mirror)…"
+cyan "→ Uploading via ${PROTOCOL} (lftp mirror)…"
 
 LFTP_DEBUG=""
 [[ -n "${LFTP_VERBOSE:-}" ]] && LFTP_DEBUG="debug 3;"
@@ -160,13 +177,11 @@ else
   MIRROR_OPTS="$MIRROR_OPTS --delete"
 fi
 
-# Hostinger supports FTPS on the standard port — try it, but don't require
-# certificate validation since Hostinger's wildcard cert often doesn't match
-# the bare IP host.
-lftp -u "${FTP_USER},${FTP_PASSWORD}" -p "${FTP_PORT}" "${FTP_HOST}" <<EOF
+# Upload via lftp. -u "${FTP_USER},${FTP_PASSWORD}" -p "${FTP_PORT}" "${TARGET}" <<EOF
 set ftp:ssl-allow yes
 set ftp:ssl-protect-data yes
-set ssl:verify-certificate no
+set ssl:verify-certificate ${VERIFY}
+set sftp:auto-confirm yes
 set net:max-retries 3
 set net:reconnect-interval-base 5
 set mirror:use-pget-n 4

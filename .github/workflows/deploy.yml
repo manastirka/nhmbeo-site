@@ -1,18 +1,20 @@
-# Build the static export and FTP-upload it to Hostinger.
+# Build the static export and upload it to Hostinger.
 # Triggered on every push to main (including auto-commits made by Decap CMS
 # from the /admin/ panel) and manually via the Actions tab.
 #
 # Required GitHub Secrets (Settings → Secrets and variables → Actions):
-#   FTP_HOST                 e.g. 92.113.19.2
-#   FTP_PORT                 e.g. 21
+#   FTP_HOST                 hostname preferred (not a raw IP) so TLS can be verified
 #   FTP_USER                 e.g. u583672902.nhmbeo.aleksandarlukovic.com
-#   FTP_PASSWORD             your Hostinger FTP password
+#   FTP_PASSWORD             Hostinger FTP/SFTP password
 #   FTP_REMOTE_PATH          "." for subdomain accounts (default)
 #
-# Optional secrets:
-#   NEXT_PUBLIC_SITE_URL                e.g. https://nhmbeo.aleksandarlukovic.com
-#   NEXT_PUBLIC_GA_MEASUREMENT_ID       e.g. G-XXXXXXXXXX
-#   NEXT_PUBLIC_GOOGLE_VERIFICATION     Search Console token
+# Optional:
+#   DEPLOY_PROTOCOL          ftp (default, current Hostinger account) or sftp
+#   FTP_PORT                 21 for ftp
+#   SFTP_PORT                65002 on Hostinger
+#   NEXT_PUBLIC_SITE_URL     e.g. https://nhmbeo.aleksandarlukovic.com
+#   NEXT_PUBLIC_GA_MEASUREMENT_ID
+#   NEXT_PUBLIC_GOOGLE_VERIFICATION
 
 name: Build & deploy
 
@@ -54,6 +56,7 @@ jobs:
           NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
           NEXT_PUBLIC_GA_MEASUREMENT_ID: ${{ secrets.NEXT_PUBLIC_GA_MEASUREMENT_ID }}
           NEXT_PUBLIC_GOOGLE_VERIFICATION: ${{ secrets.NEXT_PUBLIC_GOOGLE_VERIFICATION }}
+          NEXT_PUBLIC_NEWSLETTER_ENDPOINT: /newsletter.php
         run: npm run build
 
       - name: Restore /api directory
@@ -114,29 +117,47 @@ jobs:
       - name: Install lftp
         run: sudo apt-get update && sudo apt-get install -y lftp
 
-      - name: Upload via FTP
+      - name: Upload
         env:
           FTP_HOST: ${{ secrets.FTP_HOST }}
           FTP_PORT: ${{ secrets.FTP_PORT }}
+          SFTP_PORT: ${{ secrets.SFTP_PORT }}
+          DEPLOY_PROTOCOL: ${{ secrets.DEPLOY_PROTOCOL }}
           FTP_USER: ${{ secrets.FTP_USER }}
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
           FTP_REMOTE_PATH: ${{ secrets.FTP_REMOTE_PATH }}
         run: |
           set -euo pipefail
           : "${FTP_REMOTE_PATH:=.}"
-          echo "→ Uploading to ${FTP_USER}@${FTP_HOST}:${FTP_PORT}/${FTP_REMOTE_PATH}"
-          # Write the lftp script to a file so the heredoc isn't fighting with shell escaping.
+          PROTOCOL="${DEPLOY_PROTOCOL:-ftp}"
+          if [[ "$PROTOCOL" == "sftp" ]]; then
+            PORT="${SFTP_PORT:-65002}"
+            TARGET="sftp://${FTP_HOST}"
+            VERIFY="yes"
+          else
+            PORT="${FTP_PORT:-21}"
+            TARGET="${FTP_HOST}"
+            # Hostinger's cert does not match a bare IP; verify when we have a hostname.
+            if [[ "$FTP_HOST" =~ ^[0-9.]+$ ]]; then
+              VERIFY="no"
+              echo "⚠ FTP_HOST is an IP — TLS certificate will not be verified. Prefer the hostname and DEPLOY_PROTOCOL=sftp."
+            else
+              VERIFY="yes"
+            fi
+          fi
+          echo "→ Uploading via ${PROTOCOL} to ${FTP_USER}@${FTP_HOST}:${PORT}/${FTP_REMOTE_PATH}"
           cat > /tmp/upload.lftp <<LFTP
           set ftp:ssl-allow yes
           set ftp:ssl-protect-data yes
-          set ssl:verify-certificate no
+          set ssl:verify-certificate ${VERIFY}
+          set sftp:auto-confirm yes
           set net:max-retries 3
           set net:reconnect-interval-base 5
           set net:timeout 30
           set mirror:use-pget-n 4
           set xfer:log yes
           debug 1
-          open -u "${FTP_USER},${FTP_PASSWORD}" -p "${FTP_PORT}" "${FTP_HOST}"
+          open -u "${FTP_USER},${FTP_PASSWORD}" -p "${PORT}" "${TARGET}"
           mirror -R --verbose --delete --parallel=4 --exclude-glob .well-known --exclude-glob .git out/ ${FTP_REMOTE_PATH}/
           bye
           LFTP

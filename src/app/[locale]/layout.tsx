@@ -2,11 +2,13 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Inter, Bricolage_Grotesque } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
-import { setRequestLocale, getMessages } from 'next-intl/server';
+import { setRequestLocale, getMessages, getTranslations } from 'next-intl/server';
 import { routing, isLocale } from '@/i18n/routing';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Analytics from '@/components/Analytics';
+import { DEFAULT_DESCRIPTION, SITE_NAME } from '@/lib/seo';
+import type { Locale } from '@/i18n/config';
 import '../globals.css';
 
 // Google Search Console site verification.
@@ -15,9 +17,22 @@ import '../globals.css';
 // Next.js renders <meta name="google-site-verification" content="…"> in <head>.
 const GOOGLE_VERIFICATION = process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION;
 
-export const metadata: Metadata = GOOGLE_VERIFICATION
-  ? { verification: { google: GOOGLE_VERIFICATION } }
-  : {};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const loc: Locale = isLocale(locale) ? locale : 'sr-Cyrl';
+  return {
+    title: {
+      default: SITE_NAME[loc],
+      template: `%s — ${SITE_NAME[loc]}`,
+    },
+    description: DEFAULT_DESCRIPTION[loc],
+    ...(GOOGLE_VERIFICATION ? { verification: { google: GOOGLE_VERIFICATION } } : {}),
+  };
+}
 
 const sans = Inter({
   subsets: ['latin', 'cyrillic'],
@@ -54,14 +69,23 @@ export default async function LocaleLayout({
   }
   setRequestLocale(locale);
   const messages = await getMessages();
+  const t = await getTranslations('site');
 
   return (
     <html lang={HTML_LANG[locale] ?? 'sr-Cyrl'} className={`${sans.variable} ${display.variable}`}>
       <body className="bg-brand-paper text-brand-ink font-sans antialiased">
         <NextIntlClientProvider messages={messages} locale={locale}>
           <div className="flex min-h-screen flex-col">
+            <a
+              href="#main"
+              className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:bg-brand-lime focus:px-4 focus:py-2 focus:text-brand-midnight"
+            >
+              {t('skip')}
+            </a>
             <Header />
-            <main className="flex-1">{children}</main>
+            <main id="main" className="flex-1">
+              {children}
+            </main>
             <Footer />
           </div>
         </NextIntlClientProvider>

@@ -1,12 +1,8 @@
 import type { Metadata } from 'next';
+import { siteUrl } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: {
-    default: 'Природњачки музеј у Београду',
-    template: '%s — Природњачки музеј у Београду',
-  },
-  description:
-    'Природњачки музеј у Београду — основан 1895. године. Преко 2.000.000 музејских предмета.',
+  metadataBase: new URL(siteUrl()),
 };
 
 // This root layout intentionally only forwards children.

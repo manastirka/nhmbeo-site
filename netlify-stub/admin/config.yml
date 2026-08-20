@@ -208,7 +208,8 @@ collections:
           - { name: site, label: "Сајт", widget: object, fields: [
               { name: shortName, label: "Скраћено име", widget: string },
               { name: longName,  label: "Пуно име",    widget: string },
-              { name: tagline,   label: "Слоган",       widget: string }
+              { name: tagline,   label: "Слоган",       widget: string },
+              { name: skip,      label: "Прескочи на садржај", widget: string }
             ] }
           - { name: footer, label: "Подножје", widget: object, fields: [
               { name: main_title,   label: "Главна локација — назив", widget: string },
@@ -223,6 +224,14 @@ collections:
               { name: gallery_email,   label: "Галерија — е-пошта", widget: string },
               { name: contactLink,     label: "Линк ка контакту",   widget: string }
             ] }
+          - { name: hours, label: "Радно време (трака)", widget: object, fields: [
+              { name: gallery, label: "Назив локације", widget: string },
+              { name: closedToday, label: "Затворено данас", widget: string },
+              { name: openNow, label: "Отворено (користи {range})", widget: string },
+              { name: opens, label: "Радно време данас (користи {range})", widget: string },
+              { name: freeThursday, label: "Слободан улаз четвртком", widget: string },
+              { name: tickets, label: "Линк улазнице", widget: string }
+            ] }
       - name: ui_en
         label: "UI (English)"
         file: "content/en/ui.json"
@@ -232,7 +241,8 @@ collections:
           - { name: site, label: "Site", widget: object, fields: [
               { name: shortName, label: "Short name", widget: string },
               { name: longName,  label: "Full name",  widget: string },
-              { name: tagline,   label: "Tagline",    widget: string }
+              { name: tagline,   label: "Tagline",    widget: string },
+              { name: skip,      label: "Skip to content", widget: string }
             ] }
           - { name: footer, label: "Footer", widget: object, fields: [
               { name: main_title,   label: "Main — title", widget: string },
@@ -246,6 +256,14 @@ collections:
               { name: gallery_phoneRaw, label: "Gallery — phone (digits only)", widget: string },
               { name: gallery_email,   label: "Gallery — email", widget: string },
               { name: contactLink,     label: "Contact link label", widget: string }
+            ] }
+          - { name: hours, label: "Hours bar", widget: object, fields: [
+              { name: gallery, label: "Location label", widget: string },
+              { name: closedToday, label: "Closed today", widget: string },
+              { name: openNow, label: "Open now (use {range})", widget: string },
+              { name: opens, label: "Hours today (use {range})", widget: string },
+              { name: freeThursday, label: "Thursday free entry", widget: string },
+              { name: tickets, label: "Tickets link", widget: string }
             ] }
 
   # ---------------------------------------------------------------

@@ -4,9 +4,11 @@ import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import { getNews, listNews } from '@/lib/news';
 import { routing } from '@/i18n/routing';
+import { newsArticleMetadata } from '@/lib/seo';
 import MarkdownBody from '@/components/MarkdownBody';
 import Gallery from '@/components/Gallery';
 import type { Locale } from '@/i18n/config';
+import type { Metadata } from 'next';
 
 export async function generateStaticParams() {
   const params: { locale: string; slug: string }[] = [];
@@ -17,6 +19,15 @@ export async function generateStaticParams() {
     }
   }
   return params;
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: Locale; slug: string }>;
+}): Promise<Metadata> {
+  const { locale, slug } = await params;
+  return newsArticleMetadata(locale, slug);
 }
 
 export default async function NewsArticlePage({

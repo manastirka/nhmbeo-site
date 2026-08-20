@@ -4,6 +4,7 @@ import { Link } from '@/i18n/navigation';
 import NavMenu from './NavMenu';
 import MobileMenu from './MobileMenu';
 import LanguageSwitcher from './LanguageSwitcher';
+import HoursBar from './HoursBar';
 
 const LOGO_URL = '/uploads/wp-content-uploads-2021-04-ezgif.com-gif-maker.gif';
 
@@ -13,6 +14,7 @@ export default async function Header() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-brand-line/60 bg-white/95 backdrop-blur-md">
+      <HoursBar />
       <div className="container-wide flex items-center justify-between gap-3 py-3">
         <Link
           href="/"
