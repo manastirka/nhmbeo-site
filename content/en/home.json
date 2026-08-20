@@ -4,7 +4,7 @@
     "eyebrow": "Natural History Museum, Belgrade",
     "title": "The story of life on Earth, gathered under one roof.",
     "subtitle": "Over two million specimens — from fossils 4.5 billion years old to the contemporary flora and fauna of Serbia.",
-    "image": "/uploads/wp-content-uploads-2026-03-655223022_18385450078094058_269805532308419901_n.jpg"
+    "image": "/uploads/wp-content-uploads-2026-07-DSC2082.jpg"
   },
   "tiles": {
     "title": "Plan your visit",
@@ -21,7 +21,7 @@
       },
       {
         "title": "On view now",
-        "description": "Lords of the Depths — Sharks and Rays of the Adriatic",
+        "description": "FOSILORAMA and MINERALIS — through mid-September",
         "href": "/posetite-nas/izlozba-u-galeriji"
       },
       {
@@ -55,11 +55,11 @@
     }
   ],
   "featured": {
-    "eyebrow": "Featured",
-    "title": "Lords of the Depths — Sharks and Rays of the Adriatic",
-    "description": "Dermoplastic specimens, models, and educational content on some of the planet’s oldest predators — co-produced with the Natural History Museum of Montenegro.",
+    "eyebrow": "On view now",
+    "title": "FOSILORAMA and MINERALIS – the Pelagonian Massif",
+    "description": "Guest exhibitions from the Natural History Museum of North Macedonia: minerals of the Pelagonian Massif and sculptural reconstructions of fossil animals. At the Gallery through mid-September 2026.",
     "href": "/posetite-nas/izlozba-u-galeriji",
-    "image": "/uploads/wp-content-uploads-2026-03-656138434_18385449991094058_3913209771801890699_n.jpg",
+    "image": "/uploads/wp-content-uploads-2026-07-DSC2093.jpg",
     "cta": "Exhibition details"
   }
 }

@@ -6,7 +6,7 @@ export const pageHeroes: Record<string, string> = {
   // Visit Us
   'visit-section': '/uploads/wp-content-uploads-2021-04-prirodnjacki-muyej.jpg',
   galerija: '/uploads/wm-wikipedia-commons-2-28-KalemegdanGalery.JPG',
-  'izlozba-u-galeriji': '/uploads/wp-content-uploads-2026-03-655223022_18385450078094058_269805532308419901_n.jpg',
+  'izlozba-u-galeriji': '/uploads/wp-content-uploads-2026-07-DSC2082.jpg',
   ulaznice: '/uploads/wp-content-uploads-2025-09-Kolaz-1.jpg',
   prodavnica: '/uploads/wp-content-uploads-2025-09-Prednja-i-zadnja-strana-14.jpg',
 

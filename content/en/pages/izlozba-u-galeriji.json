@@ -1,33 +1,29 @@
 {
-  "title": "Lords of the Depths — Sharks and Rays of the Adriatic",
-  "intro": "Sharks and rays of the Adriatic have arrived in Belgrade: the fascinating world of some of the planet’s oldest predators and their role in keeping marine ecosystems in balance.",
-  "body": "The exhibition “Lords of the Depths — Sharks and Rays of the Adriatic” has opened at the Gallery of the Natural History Museum on Mali Kalemegdan, taking the public into the fascinating world of some of the planet's oldest predators and their key role in keeping marine ecosystems in balance.\n\nThe exhibition is co-produced with the Natural History Museum of Montenegro and continues a long-running regional collaboration between the two institutions.\n\nAt the opening, the audience was addressed by Slavko Spasić, Director of the Natural History Museum in Belgrade; Stefan Ralević, the author; and Dr Natalija Čađenović, Director of the Natural History Museum of Montenegro, who officially opened the show.\n\n## What you'll see\n\nThe display features dermoplastic specimens of Adriatic sharks and rays, models of selected species, and educational materials that explain the biology, diversity, and importance of these often-misunderstood animals.\n\nVisitors can encounter the most familiar species of the Adriatic, understand their role as apex predators, and learn why many of them are endangered today.\n\n## Regional collaboration\n\nThe exhibition is the result of years of cooperation between the Natural History Museum in Belgrade and the Natural History Museum of Montenegro — proof that joint projects deliver a richer, more accessible display.\n\nOn view through June 2026.",
   "_machineTranslated": true,
+  "title": "FOSILORAMA and MINERALIS – the Pelagonian Massif",
+  "intro": "Guest exhibitions from the Natural History Museum of the Republic of North Macedonia: the geological and palaeontological past of the Balkans at the Gallery on Kalemegdan.",
+  "body": "The exhibitions “FOSILORAMA” and “MINERALIS – the Pelagonian Massif” have opened at the Gallery of the Natural History Museum on Kalemegdan, produced with the Natural History Museum of the Republic of North Macedonia in Skopje. The display is part of that institution’s centenary.\n\nThe collaboration strengthens ties between kindred museums and jointly presents the rich geological and palaeontological heritage of the Balkans through an exchange of knowledge, experience, and collections.\n\n## MINERALIS – the Pelagonian Massif\n\nThe exhibition takes visitors through the geological past of one of North Macedonia’s most significant regions. Author Biljana Karamačoska presents the beauty, diversity, and scientific value of the mineral world through original specimens, locality photographs, geological maps, and educational material.\n\n## FOSILORAMA\n\nThe exhibition uniquely joins science and art. Author Biljana Garevska presents sculptural reconstructions of fossil animals made from original finds in museum collections, field photographs, and stories that bring ancient organisms back into view.\n\nVisitors can see reconstructions of skulls of prehistoric giraffes, rhinoceroses, mastodons, hyenas, sabre-toothed cats, antelopes, and other members of the famous Pikermian fauna that inhabited the Balkans several million years ago.\n\nOn view through mid-September 2026.",
   "images": [
-    "/uploads/wp-content-uploads-2026-03-654232070_18385450060094058_7241531406906751035_n.jpg",
-    "/uploads/wp-content-uploads-2026-03-654272539_18385450030094058_279936144028085145_n.jpg",
-    "/uploads/wp-content-uploads-2026-03-654446862_18385450009094058_2849647016956406540_n.jpg",
-    "/uploads/wp-content-uploads-2026-03-654488334_18385449976094058_8729084757633158383_n.jpg",
-    "/uploads/wp-content-uploads-2026-03-654845398_18385450051094058_5309508280635178001_n.jpg",
-    "/uploads/wp-content-uploads-2026-03-655190076_18385450090094058_7451136653472061076_n.jpg",
-    "/uploads/wp-content-uploads-2026-03-655412779_18385449994094058_4878136772648638810_n.jpg",
-    "/uploads/wp-content-uploads-2026-03-655801827_18385449973094058_7341998173728102353_n.jpg",
-    "/uploads/wp-content-uploads-2026-03-655834726_18385450027094058_1495911300717225974_n.jpg",
-    "/uploads/wp-content-uploads-2026-03-656044839_18385450012094058_9195553140024930219_n.jpg",
-    "/uploads/wp-content-uploads-2026-03-656138434_18385449991094058_3913209771801890699_n.jpg"
+    "/uploads/wp-content-uploads-2026-07-DSC2073.jpg",
+    "/uploads/wp-content-uploads-2026-07-DSC2082.jpg",
+    "/uploads/wp-content-uploads-2026-07-DSC2084.jpg",
+    "/uploads/wp-content-uploads-2026-07-DSC2093.jpg",
+    "/uploads/wp-content-uploads-2026-07-DSC2198.jpg",
+    "/uploads/wp-content-uploads-2026-07-DSC2226.jpg",
+    "/uploads/wp-content-uploads-2026-07-DSC2247.jpg"
   ],
   "featured": {
     "eyebrow": "Current exhibition",
-    "title": "Lords of the Depths",
-    "authors": "Stefan Ralević · Natural History Museum of Montenegro",
-    "dates": "March — June 2026",
+    "title": "FOSILORAMA and MINERALIS",
+    "authors": "Biljana Garevska · Biljana Karamačoska · Natural History Museum of North Macedonia",
+    "dates": "July — mid-September 2026",
     "venue": "Gallery of the Natural History Museum · Mali Kalemegdan 5, Belgrade",
     "ctaHref": "/posetite-nas/ulaznice",
     "ctaLabel": "Buy tickets"
   },
   "stats": [
     {
-      "value": "Through June 2026",
+      "value": "Through mid-September",
       "label": "on view"
     },
     {
@@ -35,20 +31,20 @@
       "label": "Gallery of the Natural History Museum"
     },
     {
-      "value": "Belgrade + Montenegro",
+      "value": "Belgrade + Skopje",
       "label": "regional collaboration"
     },
     {
-      "value": "Dermoplasty",
-      "label": "specimens, models, education"
+      "value": "Two displays",
+      "label": "minerals and fossil reconstructions"
     }
   ],
   "credits": {
-    "authors_label": "Author",
-    "authors": "Stefan Ralević",
+    "authors_label": "Authors",
+    "authors": "Biljana Garevska · Biljana Karamačoska",
     "photography_label": "Partner",
-    "photography": "Natural History Museum of Montenegro",
-    "patron_label": "Opened by",
-    "patron": "Dr Natalija Čađenović"
+    "photography": "Natural History Museum of the Republic of North Macedonia",
+    "patron_label": "Opening",
+    "patron": "Slavko Spasić · Ivica Žarkadov"
   }
 }
