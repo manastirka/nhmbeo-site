@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next';
 import { routing } from '@/i18n/routing';
 import { nav } from '@/lib/nav';
 import { listNews } from '@/lib/news';
+import { listCatalogProducts } from '@/lib/products';
 import { loadPage } from '@/lib/content';
 import type { Locale } from '@/i18n/config';
 
@@ -44,6 +45,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       entries.push({
         url: `${SITE}/${locale}/vesti/${a.slug}`,
         lastModified: a.date ? new Date(a.date) : undefined,
+        changeFrequency: 'monthly',
+      });
+    }
+    const products = await listCatalogProducts(loc);
+    for (const p of products) {
+      entries.push({
+        url: `${SITE}/${locale}/posetite-nas/prodavnica/${p.slug}`,
         changeFrequency: 'monthly',
       });
     }

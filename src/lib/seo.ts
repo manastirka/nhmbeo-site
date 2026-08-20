@@ -3,6 +3,7 @@ import type { Locale } from '@/i18n/config';
 import { locales } from '@/i18n/config';
 import { loadPage, loadHome } from '@/lib/content';
 import { getNews } from '@/lib/news';
+import { getCatalogProduct } from '@/lib/products';
 
 const FALLBACK_SITE = 'https://nhmbeo.aleksandarlukovic.com';
 
@@ -138,6 +139,28 @@ export async function newsArticleMetadata(
     description: article.excerpt,
     image: article.image,
     type: 'article',
+  });
+}
+
+export async function catalogProductMetadata(
+  locale: Locale,
+  slug: string,
+): Promise<Metadata> {
+  const product = await getCatalogProduct(locale, slug);
+  const pathname = `/posetite-nas/prodavnica/${slug}`;
+  if (!product) {
+    return pageMetadata({
+      locale,
+      pathname,
+      title: SITE_NAME[locale],
+    });
+  }
+  return pageMetadata({
+    locale,
+    pathname,
+    title: product.title,
+    description: product.body?.slice(0, 220) || product.kind,
+    image: product.image,
   });
 }
 

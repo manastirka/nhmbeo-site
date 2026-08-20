@@ -1,0 +1,62 @@
+{
+  "slug": "drvo-ili-zivot-sam",
+  "title": "A Tree, or Life Itself",
+  "price": "500.00 RSD",
+  "image": "/uploads/wp-content-uploads-2021-04-Drvo-ili-zivot-sam-V-300x300.jpg",
+  "kind": "Каталог изложбе",
+  "isbn": "978-86-7025-572-2 (САНУ)",
+  "facts": [
+    {
+      "key": "other",
+      "label": "Аутор",
+      "value": "Олга Васић и Марјан Никетић"
+    },
+    {
+      "key": "other",
+      "label": "Цртеж",
+      "value": "Александар Стојановић"
+    },
+    {
+      "key": "other",
+      "label": "Издавач",
+      "value": "САНУ, Природњачки музеј"
+    },
+    {
+      "key": "other",
+      "label": "Број страна",
+      "value": "140"
+    },
+    {
+      "key": "other",
+      "label": "Језик",
+      "value": "Српски"
+    },
+    {
+      "key": "other",
+      "label": "Тип повеза",
+      "value": "Меки повез"
+    },
+    {
+      "key": "other",
+      "label": "Формат",
+      "value": "24 цм"
+    },
+    {
+      "key": "other",
+      "label": "Година издања",
+      "value": "2012."
+    },
+    {
+      "key": "other",
+      "label": "Кључне речи",
+      "value": "Природњачки музеј, дрвеће, зборници"
+    },
+    {
+      "key": "isbn",
+      "label": "ISBN",
+      "value": "978-86-7025-572-2 (САНУ)"
+    }
+  ],
+  "body": "„Дрво или живот сам“ је стручна монографија која је пратила истоимену изложбу Природњачког музеја и галерије САНУ.",
+  "_machineTranslated": true
+}

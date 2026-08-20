@@ -1,0 +1,56 @@
+{
+  "slug": "butterflies",
+  "title": "Butterflies (Lepidoptera, Hesperioidea i Papilionoidea) from the collection of the Natural History Museum in Belgrade",
+  "price": "300.00 рсд",
+  "image": "/uploads/wp-content-uploads-2021-04-Butterflies-V-300x300.jpg",
+  "kind": "Монографија",
+  "isbn": "978-86-82145-10-3",
+  "facts": [
+    {
+      "key": "other",
+      "label": "Аутор",
+      "value": "Љиљана Анђус"
+    },
+    {
+      "key": "other",
+      "label": "Издавач",
+      "value": "Природњачки музеј"
+    },
+    {
+      "key": "other",
+      "label": "Број страна",
+      "value": "94 стр."
+    },
+    {
+      "key": "other",
+      "label": "Језик",
+      "value": "Енглески"
+    },
+    {
+      "key": "other",
+      "label": "Тип повеза",
+      "value": "Меки повез"
+    },
+    {
+      "key": "other",
+      "label": "Формат",
+      "value": "24 цм"
+    },
+    {
+      "key": "other",
+      "label": "Година издања",
+      "value": "2008."
+    },
+    {
+      "key": "other",
+      "label": "Кључне речи",
+      "value": "Природњачки музеј, Београд,Збирка дневних лептира, Каталози"
+    },
+    {
+      "key": "isbn",
+      "label": "ISBN",
+      "value": "978-86-82145-10-3"
+    }
+  ],
+  "body": "This paper presents the collection of butterflies (superfamilies Hesperiodea and Papilionoidea) housed in the Natural History Museum in Belgrade. The butterfly collections are part of the Museum’s rich and well-preserved entomological collection, which includes about 300.000 representatives of all insect group."
+}

@@ -71,7 +71,11 @@
     "sort_name": "By name",
     "sort_priceAsc": "Price: low → high",
     "sort_priceDesc": "Price: high → low",
-    "noImage": "No image"
+    "noImage": "No image",
+    "back": "All catalogues",
+    "buyNote": "Catalogues are sold at the Gallery shop of the Natural History Museum at Mali Kalemegdan.",
+    "priceOnRequest": "Price on request",
+    "keywords": "Keywords"
   },
   "news": {
     "back": "All news",

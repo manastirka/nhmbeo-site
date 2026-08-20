@@ -3,7 +3,22 @@ import { loadProducts } from '@/lib/content';
 import ContentPage from '@/components/ContentPage';
 import ProductGrid from '@/components/ProductGrid';
 import { heroFor } from '@/lib/page-heroes';
+import { generatePageMetadata } from '@/lib/page-helpers';
 import type { Locale } from '@/i18n/config';
+import type { Metadata } from 'next';
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>;
+}): Promise<Metadata> {
+  return generatePageMetadata({
+    params,
+    slug: 'prodavnica',
+    pathname: '/posetite-nas/prodavnica',
+    fallbackTitle: 'Продавница',
+  });
+}
 
 export default async function Page({
   params,

@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "scrape": "node scripts/scrape-nhmbeo.mjs",
+    "scrape:products": "node scripts/scrape-products.mjs",
     "translate": "node scripts/translate-content.mjs"
   },
   "dependencies": {

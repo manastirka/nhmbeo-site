@@ -85,6 +85,70 @@ collections:
       - { name: _machineTranslated, label: "Auto-translated", widget: hidden, default: true }
 
   # ---------------------------------------------------------------
+  #  SHOP / CATALOGUES — one entry = one publication
+  # ---------------------------------------------------------------
+  - name: products_sr
+    label: "Продавница (ћирилица)"
+    label_singular: "Каталог"
+    folder: "content/sr-Cyrl/products"
+    create: true
+    delete: true
+    extension: json
+    format: json
+    slug: "{{slug}}"
+    identifier_field: slug
+    summary: "{{title}} — {{price}}"
+    sortable_fields: ['title', 'price']
+    fields:
+      - { name: slug,  label: "Кратки URL (slug)", widget: string, hint: "Без размака. Пример: fosilizacija" }
+      - { name: title, label: "Наслов", widget: string }
+      - { name: price, label: "Цена", widget: string, required: false }
+      - { name: image, label: "Корица (URL)", widget: string }
+      - { name: kind,  label: "Врста (каталог, монографија…)", widget: string, required: false }
+      - { name: isbn,  label: "ISBN", widget: string, required: false }
+      - { name: body,  label: "Опис", widget: markdown, required: false }
+      - name: facts
+        label: "Библиографски подаци"
+        widget: list
+        required: false
+        summary: "{{fields.label}}: {{fields.value}}"
+        fields:
+          - { name: key,   label: "Кључ", widget: hidden, default: other }
+          - { name: label, label: "Поље", widget: string }
+          - { name: value, label: "Вредност", widget: string }
+
+  - name: products_en
+    label: "Shop (English)"
+    label_singular: "Catalogue"
+    folder: "content/en/products"
+    create: true
+    delete: true
+    extension: json
+    format: json
+    slug: "{{slug}}"
+    identifier_field: slug
+    summary: "{{title}} — {{price}}"
+    sortable_fields: ['title', 'price']
+    fields:
+      - { name: slug,  label: "Slug (URL)", widget: string }
+      - { name: title, label: "Title", widget: string }
+      - { name: price, label: "Price", widget: string, required: false }
+      - { name: image, label: "Cover URL", widget: string }
+      - { name: kind,  label: "Kind (catalogue, monograph…)", widget: string, required: false }
+      - { name: isbn,  label: "ISBN", widget: string, required: false }
+      - { name: body,  label: "Description", widget: markdown, required: false }
+      - name: facts
+        label: "Bibliographic details"
+        widget: list
+        required: false
+        summary: "{{fields.label}}: {{fields.value}}"
+        fields:
+          - { name: key,   label: "Key", widget: hidden, default: other }
+          - { name: label, label: "Label", widget: string }
+          - { name: value, label: "Value", widget: string }
+      - { name: _machineTranslated, label: "Auto-translated", widget: hidden, default: true }
+
+  # ---------------------------------------------------------------
   #  HOME PAGE — hero, tiles, featured exhibition
   # ---------------------------------------------------------------
   - name: home

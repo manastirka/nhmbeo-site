@@ -66,6 +66,7 @@ export type Product = {
   price: string;
   image?: string;
   href: string;
+  slug: string;
 };
 
 export async function loadProducts(
